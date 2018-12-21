@@ -11,7 +11,9 @@ const permuter = {
     return arrayToCheck.some(v => v.length > 0);
   },
   generatePermutations: function() {
-    const itemId = $("#itemId").val();
+    const itemId = $("#itemId")
+      .val()
+      .trim();
 
     const slotOneValues = $("#slotOnePerks")
       .val()
