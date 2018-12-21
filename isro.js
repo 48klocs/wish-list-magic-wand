@@ -15,6 +15,7 @@ const permuter = {
 
     const slotOneValues = $("#slotOnePerks")
       .val()
+      .trim()
       .split(" ");
 
     if (!itemId) {
@@ -31,18 +32,22 @@ const permuter = {
 
     const slotTwoValues = $("#slotTwoPerks")
       .val()
+      .trim()
       .split(" ");
 
     const slotThreeValues = $("#slotThreePerks")
       .val()
+      .trim()
       .split(" ");
 
     const slotFourValues = $("#slotFourPerks")
       .val()
+      .trim()
       .split(" ");
 
     const slotFiveValues = $("#slotFivePerks")
       .val()
+      .trim()
       .split(" ");
 
     const generatedPermutations = [];
