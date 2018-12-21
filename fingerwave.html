@@ -10,13 +10,19 @@
         permuter.init();
       });
     </script>
-    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="./app.css" />
   </head>
   <body>
     <h1>
       Use
-      <a href="https://data.destinysets.com/">Destiny Sets Data Explorer</a> to
-      fill in the values.
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://data.destinysets.com/"
+      >
+        Destiny Sets Data Explorer
+      </a>
+      to fill in the values.
     </h1>
     <form>
       <table>
@@ -24,7 +30,7 @@
           <td colspan="2">
             <h3>Cheat sheet + notes</h3>
             <ul>
-              <li><code>-69420</code> is for all items</li>
+              <li><code>-69420</code> (<i>nice²</i>) is for all items</li>
               <li>
                 You can also use <code>ItemCategoryHash</code> IDs to specify
                 things like class armor and auto rifles and whatever
@@ -33,13 +39,13 @@
               <li><code>3124871000</code> - outlaw</li>
               <li><code>1168162263</code> - also... outlaw?</li>
               <li><code>1359896290</code> - dynamic sway reduction</li>
+              <li><code>2387244414</code> - zen moment</li>
+              <li><code>588594999</code> - moving target</li>
             </ul>
           </td>
         </tr>
         <tr>
-          <td colspan="2">
-            <hr>
-          </td>
+          <td colspan="2"><hr /></td>
         </tr>
         <tr>
           <td><label for="itemId">Item ID</label></td>
@@ -47,39 +53,41 @@
         </tr>
         <tr>
           <td>
-            <label for="slotOnePerks">First Slot Perks (space separated)</label>
+            <label for="slotOnePerks">
+              First Slot Perks (space separated)
+            </label>
           </td>
           <td><input id="slotOnePerks" type="text" /></td>
         </tr>
         <tr>
           <td>
-            <label for="slotTwoPerks"
-              >Second Slot Perks (space separated, optional)</label
-            >
+            <label for="slotTwoPerks">
+              Second Slot Perks (space separated, optional)
+            </label>
           </td>
           <td><input id="slotTwoPerks" type="text" /></td>
         </tr>
         <tr>
           <td>
-            <label for="slotThreePerks"
-              >Third Slot Perks (space separated, optional)</label
-            >
+            <label for="slotThreePerks">
+              Third Slot Perks (space separated, optional)
+            </label>
           </td>
           <td><input id="slotThreePerks" type="text" /></td>
         </tr>
         <tr>
           <td>
-            <label for="slotFourPerks"
-              >Fourth Slot Perks (space separated, optional)</label
-            >
+            <label for="slotFourPerks">
+              Fourth Slot Perks (space separated, optional)
+            </label>
           </td>
           <td><input id="slotFourPerks" type="text" /></td>
         </tr>
         <tr>
           <td>
-            <label for="slotFivePerks"
-              >Fifth Slot Perks (space separated, optional)</label
-            >
+            <label for="slotFivePerks">
+              Fifth Slot Perks (space separated, optional)
+            </label>
           </td>
           <td><input id="slotFivePerks" type="text" /></td>
         </tr>
@@ -95,9 +103,9 @@
         </tr>
         <tr>
           <td>
-            <label for="dimWishListContent"
-              >And here's your requested rolls</label
-            >
+            <label for="dimWishListContent">
+              And here's your requested rolls
+            </label>
           </td>
           <td>
             <textarea
