@@ -1,0 +1,28 @@
+body {
+  background: #434444;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+a:link {
+    color: yellow;
+}
+a:visited {
+    color: cyan;
+}
+a:hover {
+    color: lightgreen;
+}
+a:active {
+    color: hotpink;
+}
+code {
+    background: rgb(28, 70, 28);
+    font-size: 20px;
+}
+label {
+    font-size: 18px;
+}
+input[type="text"]
+{
+    font-size:20px;
+}
