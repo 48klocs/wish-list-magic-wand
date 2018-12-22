@@ -22,6 +22,7 @@ const permuter = {
     "Corkscrew Rifling": 4090651448,
     "Crossfire HCS": 1926090090,
     Dragonfly: 2848615171,
+    "Drop Mag": 4134353779,
     "Dusk Dot D1": 1452368634,
     "Dusk Sight D1": 1288081798,
     "Dynamic Sway Reduction": 1359896290,
@@ -40,7 +41,7 @@ const permuter = {
     "Fluted Barrel": 1840239774,
     "Fourth Time's the Charm": 1354429876,
     "Full Auto Trigger System": 2117683199, // bugbug: or is it 4267945040?
-    'Full Bore': 202670084,
+    "Full Bore": 202670084,
     "Full Choke": 104783041,
     "GA Post": 87986589,
     "GB Iron": 87986588,
@@ -137,7 +138,7 @@ const permuter = {
     return value;
   },
   getInitialPerkArray: function(perkString) {
-    if (perkString.includes(",")) {
+    if (perkString.match(/[a-z]/i)) {
       return perkString
         .split(",")
         .map(v => v.trim())
