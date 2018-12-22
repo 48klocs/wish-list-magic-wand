@@ -162,29 +162,15 @@ const permuter = {
       return;
     }
 
-    const slotTwoValues = $("#slotTwoPerks")
-      .val()
-      .trim()
-      .split(" ")
-      .map(v => this.optionallyTranslateNameToHash(v));
+    const slotTwoValues = this.getInitialPerkArray($("#slotTwoPerks").val());
 
-    const slotThreeValues = $("#slotThreePerks")
-      .val()
-      .trim()
-      .split(" ")
-      .map(v => this.optionallyTranslateNameToHash(v));
+    const slotThreeValues = this.getInitialPerkArray(
+      $("#slotThreePerks").val()
+    );
 
-    const slotFourValues = $("#slotFourPerks")
-      .val()
-      .trim()
-      .split(" ")
-      .map(v => this.optionallyTranslateNameToHash(v));
+    const slotFourValues = this.getInitialPerkArray($("#slotFourPerks").val());
 
-    const slotFiveValues = $("#slotFivePerks")
-      .val()
-      .trim()
-      .split(" ")
-      .map(v => this.optionallyTranslateNameToHash(v));
+    const slotFiveValues = this.getInitialPerkArray($("#slotFivePerks").val());
 
     const generatedPermutations = [];
 
