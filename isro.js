@@ -7,6 +7,7 @@ const permuter = {
     "Appended Mag": 1087426260,
     "Archer's Tempo": 201365942,
     "Arrowhead Brake": 839105230,
+    "Assassin's Blade": 354401740,
     "Assault Mag": 791862061,
     "ATA Scout": 893526892,
     "ATC Rex": 893526893,
@@ -30,6 +31,7 @@ const permuter = {
     "Dynamic Sway Reduction": 1359896290,
     "Elastic String": 2801223209,
     "Enhanced Battery": 2680121939,
+    "Enduring Guard": 599007201, // bugbug: or is it 1180618054?
     "Extended Barrel": 1467527085,
     "Extended Mag": 2420895100,
     "Explosive Head": 3365897133,
@@ -57,6 +59,7 @@ const permuter = {
     "High-Explosive Ordnance": 1380253176,
     "High-Impact Reserves": 2213355989,
     "High-Velocity Rounds": 2822142346,
+    "Hip-Fire Grip": 1866048759,
     "HitMark HCS": 1926090093,
     "Hitmark IS": 13792278,
     "Honed Edge": 2827049491,
@@ -90,7 +93,7 @@ const permuter = {
     "Shortspec SAS": 445755705,
     Slideshot: 3161816588,
     Smallbore: 1482024992,
-    'Snapshot Sights': 957782887,
+    "Snapshot Sights": 957782887,
     "Spike Grenades": 3301904089,
     "Steady Rounds": 3177308360,
     "SteadyHand HCS": 1926090095,
@@ -147,8 +150,7 @@ const permuter = {
   getInitialPerkArray: function(perkString) {
     if (perkString.match(/[a-z]/i)) {
       return perkString
-        .split(",")
-        .split("/")
+        .split(/\,|\//)
         .map(v => v.trim())
         .filter(v => v.length > 1)
         .map(v => this.optionallyTranslateNameToHash(v));
