@@ -1,4 +1,22 @@
 const permuter = {
+  nameHashMap: {
+    'Extended Barrel': 1467527085,
+    'Extended Mag': 2420895100,
+    'King Sight K1': 1288081797,
+    'Dusk Sight D1': 1288081798,
+    'Dusk Dot D1': 1452368634,
+    'High-Caliber Rounds': 1561002382,
+    'Steady Rounds': 3177308360,
+    'Light Mag': 679225683,
+    'Flared Magwell': 3230963543,
+    'Zen Moment': 2387244414,
+    'Dynamic Sway Reduction': 1359896290,
+    'Tap the Trigger': 1890422124,
+    'Triple Tap': 3400784728,
+    'Rampage': 3425386926,
+    'High-Impact Reserves': 2213355989,
+    'Kill Clip': 1015611457
+  },
   initEvents: function() {
     $("#generatePermutations").click(() => {
       this.generatePermutations();
@@ -10,15 +28,44 @@ const permuter = {
   arrayHasValues: function(arrayToCheck) {
     return arrayToCheck.some(v => v.length > 0);
   },
+  optionallyTranslateNameToHash: function(value) {
+    if (!value || !value.length) {
+      return value;
+    }
+
+    if(isNaN(value)) {
+      const hashValue = this.nameHashMap[value];
+
+      if (isNaN(hashValue)) {
+        $("#dimWishListContent").val(`${value} is not a number and doesn't resemble a known hash.`);
+        throw "";
+      }
+
+      return hashValue.toString();
+    }
+
+    return value;
+  },
+  getInitialPerkArray: function(perkString) {
+    if (perkString.includes(',')) {
+      return perkString
+        .split(',')
+        .map(v => v.trim())
+        .filter(v => v.length > 1)
+        .map(v => this.optionallyTranslateNameToHash(v));
+    }
+
+    return perkString
+      .trim()
+      .split(' ');
+  },
   generatePermutations: function() {
     const itemId = $("#itemId")
       .val()
       .trim();
 
-    const slotOneValues = $("#slotOnePerks")
-      .val()
-      .trim()
-      .split(" ");
+    const slotOneValues = this.getInitialPerkArray($("#slotOnePerks")
+      .val());
 
     if (!itemId) {
       $("#dimWishListContent").val(
@@ -35,22 +82,26 @@ const permuter = {
     const slotTwoValues = $("#slotTwoPerks")
       .val()
       .trim()
-      .split(" ");
+      .split(" ")
+      .map(v => this.optionallyTranslateNameToHash(v));
 
     const slotThreeValues = $("#slotThreePerks")
       .val()
       .trim()
-      .split(" ");
+      .split(" ")
+      .map(v => this.optionallyTranslateNameToHash(v));
 
     const slotFourValues = $("#slotFourPerks")
       .val()
       .trim()
-      .split(" ");
+      .split(" ")
+      .map(v => this.optionallyTranslateNameToHash(v));
 
     const slotFiveValues = $("#slotFivePerks")
       .val()
       .trim()
-      .split(" ");
+      .split(" ")
+      .map(v => this.optionallyTranslateNameToHash(v));
 
     const generatedPermutations = [];
 
