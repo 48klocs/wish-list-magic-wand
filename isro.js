@@ -35,6 +35,7 @@ const permuter = {
     "Explosive Payload": 3038247973,
     "Fastdraw HCS": 1926090094,
     "Fiberglass Arrow Shaft": 3429800428,
+    'Field Prep': 2869569095,
     "Firmly Planted": 280464955,
     "Flared Magwell": 3230963543,
     "Flash HS5": 162816563,
