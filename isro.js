@@ -1,22 +1,22 @@
 const permuter = {
   nameHashMap: {
+    'Dusk Dot D1': 1452368634,
+    'Dusk Sight D1': 1288081798,
+    'Dynamic Sway Reduction': 1359896290,
     'Extended Barrel': 1467527085,
     'Extended Mag': 2420895100,
-    'King Sight K1': 1288081797,
-    'Dusk Sight D1': 1288081798,
-    'Dusk Dot D1': 1452368634,
-    'High-Caliber Rounds': 1561002382,
-    'Steady Rounds': 3177308360,
-    'Light Mag': 679225683,
     'Flared Magwell': 3230963543,
-    'Zen Moment': 2387244414,
-    'Dynamic Sway Reduction': 1359896290,
-    'Tap the Trigger': 1890422124,
-    'Triple Tap': 3400784728,
-    'Rampage': 3425386926,
+    'High-Caliber Rounds': 1561002382,
     'High-Impact Reserves': 2213355989,
     'Kill Clip': 1015611457,
-    'SteadyHand HCS': 1926090095
+    'King Sight K1': 1288081797,
+    'Light Mag': 679225683,
+    'Rampage': 3425386926,
+    'Steady Rounds': 3177308360,
+    'SteadyHand HCS': 1926090095,
+    'Tap the Trigger': 1890422124,
+    'Triple Tap': 3400784728,
+    'Zen Moment': 2387244414
   },
   initEvents: function() {
     $("#generatePermutations").click(() => {
