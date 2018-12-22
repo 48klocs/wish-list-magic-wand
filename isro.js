@@ -1,5 +1,6 @@
 const permuter = {
   nameHashMap: {
+    "Accurized Rounds": 3142289711,
     "Alloy Casing": 2985827016,
     "Alloy Mag": 1431678320,
     "Ambitious Assassin": 2010801679,
@@ -68,6 +69,7 @@ const permuter = {
     "Linear Compensator": 1441682018,
     "Model 8 Red": 663495154,
     "Natural String": 1784898267,
+    "Opening Shot": 47981717,
     Outlaw: 1168162263, // bugbug: or is it 3124871000?
     "Polygonal Rifling": 1392496348,
     "Polymer String": 852209214,
@@ -82,6 +84,7 @@ const permuter = {
     "Red Dot Micro": 240563801,
     "Red Dot 2 MOA": 2405638015,
     "Relentless Strikes": 1749209109,
+    "Ricochet Rounds": 1885400500,
     "Rifled Barrel": 1332244541,
     "SC Holo": 2054312700,
     "Shortspec SAS": 445755705,
@@ -145,6 +148,7 @@ const permuter = {
     if (perkString.match(/[a-z]/i)) {
       return perkString
         .split(",")
+        .split("/")
         .map(v => v.trim())
         .filter(v => v.length > 1)
         .map(v => this.optionallyTranslateNameToHash(v));
