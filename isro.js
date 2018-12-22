@@ -15,7 +15,8 @@ const permuter = {
     'Triple Tap': 3400784728,
     'Rampage': 3425386926,
     'High-Impact Reserves': 2213355989,
-    'Kill Clip': 1015611457
+    'Kill Clip': 1015611457,
+    'SteadyHand HCS': 1926090095
   },
   initEvents: function() {
     $("#generatePermutations").click(() => {
