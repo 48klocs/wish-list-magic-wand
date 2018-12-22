@@ -6,6 +6,7 @@ const permuter = {
     "Appended Mag": 1087426260,
     "Archer's Tempo": 201365942,
     "Arrowhead Brake": 839105230,
+    "Assault Mag": 791862061,
     "ATA Scout": 893526892,
     "ATC Rex": 893526893,
     "Auto-Loading Holster": 3300816228,
