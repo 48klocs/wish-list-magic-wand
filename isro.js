@@ -30,6 +30,7 @@ const permuter = {
     "Concussion Grenades": 1716000303,
     "Control SAS": 445755706,
     "Corkscrew Rifling": 4090651448,
+    Countermass: 3809316345,
     "Crossfire HCS": 1926090090,
     Dragonfly: 2848615171,
     "Drop Mag": 4134353779,
