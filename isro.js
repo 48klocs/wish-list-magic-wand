@@ -20,6 +20,7 @@ const permuter = {
     "Auto-Loading Holster": 3300816228,
     "Balanced Guard": 52780822,
     "Black Powder": 199614214,
+    "Blinding Grenades": 3032599245,
     "Box Breathing": 2551157718,
     "Carbon Arrow Shaft": 2154191829,
     "Chambered Compensator": 3661387068,
