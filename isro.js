@@ -1,9 +1,9 @@
 const permuter = {
   secondaryHashMap: {
-    599007201: 1180618054,  // enduring guard
+    599007201: 1180618054, // enduring guard
     2117683199: 4267945040, // full auto trigger system
     1168162263: 3124871000, // outlaw
-    332773068: 1478423395   // volatile launch
+    332773068: 1478423395 // volatile launch
   },
   nameHashMap: {
     "Accurized Rounds": 3142289711,
@@ -163,7 +163,7 @@ const permuter = {
       .filter(v => !isNaN(v))
       .map(v => v.toString());
 
-      perkArray.push(...alsoKnownAsValues);
+    perkArray.push(...alsoKnownAsValues);
   },
   getInitialPerkArray: function(perkString) {
     if (perkString.match(/[a-z]/i)) {
@@ -173,9 +173,9 @@ const permuter = {
         .filter(v => v.length > 1)
         .map(v => this.optionallyTranslateNameToHash(v));
 
-        this.addSecondaryHashValue(perkArray);
+      this.addSecondaryHashValue(perkArray);
 
-        return perkArray;
+      return perkArray;
     }
 
     return perkString.trim().split(" ");
