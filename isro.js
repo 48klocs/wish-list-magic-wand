@@ -1,4 +1,10 @@
 const permuter = {
+  secondaryHashMap: {
+    599007201: 1180618054,  // enduring guard
+    2117683199: 4267945040, // full auto trigger system
+    1168162263: 3124871000, // outlaw
+    332773068: 1478423395   // volatile launch
+  },
   nameHashMap: {
     "Accurized Rounds": 3142289711,
     "Alloy Casing": 2985827016,
@@ -31,7 +37,7 @@ const permuter = {
     "Dynamic Sway Reduction": 1359896290,
     "Elastic String": 2801223209,
     "Enhanced Battery": 2680121939,
-    "Enduring Guard": 599007201, // bugbug: or is it 1180618054?
+    "Enduring Guard": 599007201,
     "Extended Barrel": 1467527085,
     "Extended Mag": 2420895100,
     "Explosive Head": 3365897133,
@@ -45,7 +51,7 @@ const permuter = {
     "Flexible String": 4067834857,
     "Fluted Barrel": 1840239774,
     "Fourth Time's the Charm": 1354429876,
-    "Full Auto Trigger System": 2117683199, // bugbug: or is it 4267945040?
+    "Full Auto Trigger System": 2117683199,
     "Full Bore": 202670084,
     "Full Choke": 104783041,
     "GA Post": 87986589,
@@ -73,7 +79,7 @@ const permuter = {
     "Model 8 Red": 663495154,
     "Natural String": 1784898267,
     "Opening Shot": 47981717,
-    Outlaw: 1168162263, // bugbug: or is it 3124871000?
+    Outlaw: 1168162263,
     "Polygonal Rifling": 1392496348,
     "Polymer String": 852209214,
     "Proximity Grenades": 409831596,
@@ -110,7 +116,7 @@ const permuter = {
     "Triple Tap": 3400784728,
     "TrueSight HCS": 1926090092,
     "Under Pressure": 1645158859,
-    "Volatile Launch": 332773068, // bugbug: or is it 1478423395?
+    "Volatile Launch": 332773068,
     "Whirlwind Blade": 3913600130,
     "Wolf Dot W2": 1452368632,
     "Wolf Sight W1": 1288081796,
@@ -147,13 +153,25 @@ const permuter = {
 
     return value;
   },
+  addSecondaryHashValue: function(perkArray) {
+    const alsoKnownAsValues = perkArray
+      .map(v => this.secondaryHashMap[v])
+      .filter(v => !isNaN(v))
+      .map(v => v.toString());
+
+      perkArray.push(...alsoKnownAsValues);
+  },
   getInitialPerkArray: function(perkString) {
     if (perkString.match(/[a-z]/i)) {
-      return perkString
+      const perkArray = perkString
         .split(/\,|\//)
         .map(v => v.trim())
         .filter(v => v.length > 1)
         .map(v => this.optionallyTranslateNameToHash(v));
+
+        this.addSecondaryHashValue(perkArray);
+
+        return perkArray;
     }
 
     return perkString.trim().split(" ");
