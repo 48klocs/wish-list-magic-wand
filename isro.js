@@ -12,6 +12,7 @@ const permuter = {
     "Ambitious Assassin": 2010801679,
     "Appended Mag": 1087426260,
     "Archer's Tempo": 201365942,
+    "Armor-Piercing Rounds": 1968497646,
     "Arrowhead Brake": 839105230,
     "Assassin's Blade": 354401740,
     "Assault Mag": 791862061,
