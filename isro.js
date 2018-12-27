@@ -74,6 +74,7 @@ const permuter = {
     "Hitmark IS": 13792278,
     "Honed Edge": 2827049491,
     "Hungry Edge": 436053704,
+    "Impact Casing": 3796465595,
     "IS 2 Classic": 2209280307,
     "Kill Clip": 1015611457,
     "King Dot K2": 1452368633,
