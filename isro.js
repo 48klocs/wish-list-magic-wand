@@ -1,9 +1,9 @@
 const permuter = {
   secondaryHashMap: {
-    599007201: 1180618054,  // enduring guard
+    599007201: 1180618054, // enduring guard
     2117683199: 4267945040, // full auto trigger system
     1168162263: 3124871000, // outlaw
-    332773068: 1478423395   // volatile launch
+    332773068: 1478423395 // volatile launch
   },
   nameHashMap: {
     "Accurized Rounds": 3142289711,
@@ -46,6 +46,7 @@ const permuter = {
     "Explosive Head": 3365897133,
     "Explosive Payload": 3038247973,
     "Fastdraw HCS": 1926090094,
+    "Feeding Frenzy": 2779035018,
     "Fiberglass Arrow Shaft": 3429800428,
     "Field Prep": 2869569095,
     "Firmly Planted": 280464955,
@@ -79,8 +80,10 @@ const permuter = {
     "King Sight K1": 1288081797,
     "Light Mag": 679225683,
     "Linear Compensator": 1441682018,
+    "Meyrin RDS": 3433396026,
     "Model 8 Red": 663495154,
     "Natural String": 1784898267,
+    Onslaught: 95528736,
     "Opening Shot": 47981717,
     Outlaw: 1168162263,
     "Polygonal Rifling": 1392496348,
@@ -93,6 +96,7 @@ const permuter = {
     Rampage: 3425386926,
     Rangefinder: 2846385770,
     "Rapid Hit": 247725512,
+    "Rasmussen ISA": 1096957638,
     "Red Dot Micro": 240563801,
     "Red Dot 2 MOA": 2405638015,
     "Relentless Strikes": 1749209109,
@@ -162,7 +166,7 @@ const permuter = {
       .filter(v => !isNaN(v))
       .map(v => v.toString());
 
-      perkArray.push(...alsoKnownAsValues);
+    perkArray.push(...alsoKnownAsValues);
   },
   getInitialPerkArray: function(perkString) {
     if (perkString.match(/[a-z]/i)) {
@@ -172,9 +176,9 @@ const permuter = {
         .filter(v => v.length > 1)
         .map(v => this.optionallyTranslateNameToHash(v));
 
-        this.addSecondaryHashValue(perkArray);
+      this.addSecondaryHashValue(perkArray);
 
-        return perkArray;
+      return perkArray;
     }
 
     return perkString.trim().split(" ");
