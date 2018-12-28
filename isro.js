@@ -87,6 +87,7 @@ const permuter = {
     "Linear Compensator": 1441682018,
     "Meyrin RDS": 3433396026,
     "Model 8 Red": 663495154,
+    "Moving Target": 588594999,
     "Natural String": 1784898267,
     Onslaught: 95528736,
     "Opening Shot": 47981717,
