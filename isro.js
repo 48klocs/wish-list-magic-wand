@@ -4,6 +4,7 @@ const permuter = {
     599007201: 1180618054, // enduring guard
     2117683199: 4267945040, // full auto trigger system
     1168162263: 3124871000, // outlaw
+    806159697: 2360754333, // trench barrel (barrel -> trait)
     332773068: 1478423395 // volatile launch
   },
   nameHashMap: {
@@ -139,6 +140,7 @@ const permuter = {
     "Tireless Blade": 2590710093,
     "Torch HS3": 162816563,
     "Tracking Module": 3977735242,
+    "Trench Barrel": 806159697,
     "Triple Tap": 3400784728,
     "TrueSight HCS": 1926090092,
     "Under Pressure": 1645158859,
