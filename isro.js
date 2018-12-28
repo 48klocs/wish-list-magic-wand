@@ -139,6 +139,7 @@ const permuter = {
     "Sticky Grenades": 3373736292,
     "Straight Fletching": 3827198035,
     "Sureshot HCS": 1926090091,
+    Surrounded: 3708227201,
     "Tactical Mag": 106909392,
     "Tactile String": 1196733167,
     "Tap the Trigger": 1890422124,
