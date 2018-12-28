@@ -3,6 +3,7 @@ const permuter = {
     1683379515: 3871884143, // disruption break (it's a barrel and a trait)
     599007201: 1180618054, // enduring guard
     2117683199: 4267945040, // full auto trigger system
+    3337692349: 3513791699, // mulligan
     1168162263: 3124871000, // outlaw
     806159697: 2360754333, // trench barrel (barrel -> trait)
     332773068: 1478423395 // volatile launch
@@ -97,6 +98,7 @@ const permuter = {
     "Micro-Missile": 3713839994,
     "Model 8 Red": 663495154,
     "Moving Target": 588594999,
+    Mulligan: 3337692349,
     "Natural String": 1784898267,
     Onslaught: 95528736,
     "Opening Shot": 47981717,
