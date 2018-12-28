@@ -107,6 +107,7 @@ const permuter = {
     "Particle Repeater": 3868766766,
     "Polygonal Rifling": 1392496348,
     "Polymer String": 852209214,
+    "Projection Fuse": 2969185026,
     "Proximity Grenades": 409831596,
     "Pulse Monitor": 972757866,
     "Quick Launch": 3525010810,
