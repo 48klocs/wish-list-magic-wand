@@ -70,6 +70,7 @@ const permuter = {
     "Grave Robber": 1631667848,
     "Hammer-Forged Rifling": 3250034553,
     "Hard Launch": 981914802,
+    Headseeker: 460017080,
     "Heavy Guard": 2349202967,
     "High Tension String": 3371775011,
     "High-Caliber Rounds": 1561002382,
