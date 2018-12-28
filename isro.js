@@ -6,6 +6,7 @@ const permuter = {
     332773068: 1478423395 // volatile launch
   },
   nameHashMap: {
+    "Accelerated Coils": 689005463,
     "Accurized Rounds": 3142289711,
     "Alloy Casing": 2985827016,
     "Alloy Mag": 1431678320,
