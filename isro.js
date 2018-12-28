@@ -20,6 +20,7 @@ const permuter = {
     "ATA Scout": 893526892,
     "ATC Rex": 893526893,
     "Auto-Loading Holster": 3300816228,
+    "Backup Plan": 1600092898,
     "Balanced Guard": 52780822,
     "Black Powder": 199614214,
     "Blinding Grenades": 3032599245,
