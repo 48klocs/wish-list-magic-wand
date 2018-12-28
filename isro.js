@@ -1,5 +1,6 @@
 const permuter = {
   secondaryHashMap: {
+    1683379515: 3871884143, // disruption break (it's a barrel and a trait)
     599007201: 1180618054, // enduring guard
     2117683199: 4267945040, // full auto trigger system
     1168162263: 3124871000, // outlaw
@@ -36,6 +37,7 @@ const permuter = {
     Countermass: 3809316345,
     "Crossfire HCS": 1926090090,
     Dragonfly: 2848615171,
+    "Disruption Break": 1683379515,
     "Drop Mag": 4134353779,
     "Dusk Dot D1": 1452368634,
     "Dusk Sight D1": 1288081798,
