@@ -52,6 +52,7 @@ const permuter = {
     "Extended Mag": 2420895100,
     "Explosive Head": 3365897133,
     "Explosive Payload": 3038247973,
+    "FarPoint SAS": 445755710,
     "Fastdraw HCS": 1926090094,
     "Feeding Frenzy": 2779035018,
     "Fiberglass Arrow Shaft": 3429800428,
