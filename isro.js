@@ -109,6 +109,7 @@ const permuter = {
     "Ricochet Rounds": 1885400500,
     "Rifled Barrel": 1332244541,
     "SC Holo": 2054312700,
+    "Shield Disorient": 3275789089,
     "Shortspec SAS": 445755705,
     Slideshot: 3161816588,
     Slideways: 2039302152,
