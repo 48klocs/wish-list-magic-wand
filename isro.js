@@ -37,6 +37,7 @@ const permuter = {
     "Cluster Bomb": 1275731761,
     "Compact Arrow Shaft": 16392701,
     "Concussion Grenades": 1716000303,
+    "Confined Launch": 1844523823,
     "Control SAS": 445755706,
     "Corkscrew Rifling": 4090651448,
     Countermass: 3809316345,
