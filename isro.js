@@ -108,6 +108,7 @@ const permuter = {
     "SC Holo": 2054312700,
     "Shortspec SAS": 445755705,
     Slideshot: 3161816588,
+    Slideways: 2039302152,
     Smallbore: 1482024992,
     "Snapshot Sights": 957782887,
     "Sneak Bow": 908147344,
