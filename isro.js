@@ -87,6 +87,7 @@ const permuter = {
     "King Sight K1": 1288081797,
     "Light Mag": 679225683,
     "Linear Compensator": 1441682018,
+    "Liquid Coils": 1687452232,
     "Meyrin RDL": 3433396027,
     "Meyrin RDS": 3433396026,
     "Model 8 Red": 663495154,
