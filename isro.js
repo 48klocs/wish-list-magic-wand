@@ -31,6 +31,7 @@ const permuter = {
     "Black Powder": 199614214,
     "Blinding Grenades": 3032599245,
     "Box Breathing": 2551157718,
+    "Burst Guard": 3625355092,
     "Carbon Arrow Shaft": 2154191829,
     "Chambered Compensator": 3661387068,
     "Cleanshot IS": 13792279,
