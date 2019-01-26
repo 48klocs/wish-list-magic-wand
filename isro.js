@@ -90,6 +90,7 @@ const permuter = {
     "Proximity Grenades": 409831596,
     "Pulse Monitor": 972757866,
     "Quick Launch": 3525010810,
+    "QuickDot SAS": 445755707,
     Quickdraw: 706527188,
     "Quickdraw IS": 2410284311,
     Rampage: 3425386926,
