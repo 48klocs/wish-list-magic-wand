@@ -50,6 +50,7 @@ const permuter = {
     "Dusk Sight D1": 1288081798,
     "Dynamic Sway Reduction": 1359896290,
     "Elastic String": 2801223209,
+    "En Garde": 1685431615,
     "Enhanced Battery": 2680121939,
     "Enduring Guard": 599007201,
     "Extended Barrel": 1467527085,
