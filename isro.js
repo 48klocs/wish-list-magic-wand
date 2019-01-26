@@ -91,6 +91,7 @@ const permuter = {
     "Implosion Rounds": 3492396210,
     "Ionized Battery": 1483536627,
     "IS 2 Classic": 2209280307,
+    "Jagged Edge": 3666208348,
     "Kill Clip": 1015611457,
     "King Dot K2": 1452368633,
     "King Sight K1": 1288081797,
