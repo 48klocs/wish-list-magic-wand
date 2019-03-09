@@ -104,7 +104,7 @@ const permuter = {
     "Linear Compensator": 1441682018,
     "Liquid Coils": 1687452232,
     "Master of Arms": 3081867624,
-    "Meganeura": 1941225610,
+    Meganeura: 1941225610,
     "Meyrin RDL": 3433396027,
     "Meyrin RDS": 3433396026,
     "Micro-Missile": 3713839994,
