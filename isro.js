@@ -63,6 +63,7 @@ const permuter = {
     "Feeding Frenzy": 2779035018,
     "Fiberglass Arrow Shaft": 3429800428,
     "Field Prep": 2869569095,
+    "Firing Line": 1771339417,
     "Firmly Planted": 280464955,
     "Flared Magwell": 3230963543,
     "Flash HS5": 1628165637,
