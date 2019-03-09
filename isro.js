@@ -146,6 +146,7 @@ const permuter = {
     "SLO-12 Post": 965619221,
     "SLO-21 Post": 965619220,
     Smallbore: 1482024992,
+    "Smart Drift Control": 3798852852,
     "Snapshot Sights": 957782887,
     "Sneak Bow": 908147344,
     "Spike Grenades": 3301904089,
