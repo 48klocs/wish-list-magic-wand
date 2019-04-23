@@ -73,7 +73,7 @@ const permuter = {
     "Fourth Time's the Charm": 1354429876,
     "Full Auto Trigger System": 2117683199,
     "Full Bore": 202670084,
-    "Full Choke": 104783041,
+    "Full Choke": 1047830412,
     "Full Court": 2888557110,
     "GA Post": 87986589,
     "GB Iron": 87986588,
