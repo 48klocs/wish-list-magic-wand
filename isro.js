@@ -56,6 +56,7 @@ const permuter = {
     "En Garde": 1685431615,
     "Enhanced Battery": 2680121939,
     "Enduring Guard": 599007201,
+    "Energy Transfer": 2030760728,
     "Extended Barrel": 1467527085,
     "Extended Mag": 2420895100,
     "Explosive Head": 3365897133,
