@@ -118,6 +118,7 @@ const permuter = {
     Mulligan: 3337692349,
     "Multikill Clip": 2458213969,
     "Natural String": 1784898267,
+    "No Distractions": 2866798147,
     "One-Two Punch": 2679249093,
     Onslaught: 95528736,
     "Opening Shot": 47981717,
