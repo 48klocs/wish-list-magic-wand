@@ -61,6 +61,7 @@ const permuter = {
     "Explosive Head": 3365897133,
     "Explosive Light": 3194351027,
     "Explosive Payload": 3038247973,
+    "Eye of the Storm": 699525795,
     "FarPoint SAS": 445755710,
     "Fastdraw HCS": 1926090094,
     "Feeding Frenzy": 2779035018,
