@@ -144,6 +144,7 @@ const permuter = {
     "Shattering Blade": 818211479,
     "Shield Disorient": 3275789089,
     "Shortspec SAS": 445755705,
+    "Signal MS5": 194952923,
     Slideshot: 3161816588,
     Slideways: 2039302152,
     "SLO-10 Post": 965619223,
