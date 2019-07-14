@@ -100,6 +100,7 @@ const permuter = {
     "Hungry Edge": 436053704,
     "Impact Casing": 3796465595,
     "Implosion Rounds": 3492396210,
+    "Impulse MS3": 194952922,
     "Ionized Battery": 1483536627,
     "IS 2 Classic": 2209280307,
     "Jagged Edge": 3666208348,
