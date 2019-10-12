@@ -1,4 +1,34 @@
 const permuter = {
+  secondaryMasterworkHashMap: {
+    178753455: 758092021, // reload -> reload speed
+    654849177: 1154004463, // velocity -> velocity
+    915325363: 1431498388, // charge time + impact
+    1431498388: 1639384016, // draw time + charge time
+    186337601: 2357520979, // handling -> handling
+    684616255: 2697220197, // range -> range
+    384158423: 2942552113, // stability -> stability
+    2674077375: 2993547493, // accuracy -> accuracy
+    1431498388: 3128594062, // charge time + impact -> ct + i
+    915325363: 3128594062, // charge time + impact -> ct + i,
+    3130025796: 3833978555, // arc damage resistance -> adr
+    1576279482: 3870201881 // void damage resistance -> vdr
+  },
+  masterworkHashMap: {
+    Accuracy: 2674077375,
+    "Arc Damage Resistance": 3130025796,
+    "Blast Radius": 3444329767,
+    "Charge Time": 1431498388,
+    "Draw Time": 1639384016,
+    Handling: 186337601,
+    "Heroic Resistance": 2572873169,
+    Impact: 915325363,
+    Range: 684616255,
+    Reload: 178753455,
+    "Solar Damage Resistance": 383171816,
+    Stability: 384158423,
+    Velocity: 654849177,
+    "Void Damage Resistance":1576279482
+  },
   secondaryHashMap: {
     1683379515: 3871884143, // disruption break (it's a barrel and a trait)
     599007201: 1180618054, // enduring guard
@@ -234,7 +264,7 @@ const permuter = {
 
     perkArray.push(...alsoKnownAsValues);
   },
-  getInitialPerkArray: function(perkString) {
+  getPerkArray: function(perkString) {
     if (perkString.match(/[a-z]/i)) {
       const perkArray = perkString
         .split(/\,|\//)
@@ -249,12 +279,42 @@ const permuter = {
 
     return perkString.trim().split(" ");
   },
+  addSecondaryMasterworkHashValue: function(masterworkArray) {
+    const masterworkAlsoKnownAsValues = masterworkArray
+      .map(v => this.secondaryMasterworkHashMap[v])
+      .filter(v => !isNaN(v))
+      .map(v => v.toString());
+
+    perkArray.push(...masterworkAlsoKnownAsValues);
+  },
+  getMasterworkPerkArray: function(masterworkString) {
+    if (masterworkString.match(/[a-z]/i)) {
+      const masterworkArray = masterworkString
+        .split(/\,|\//)
+        .map(v => v.trim())
+        .filter(v => v.length > 1)
+        .map(v => this.optionallyTranslateMasterworkToHash(v));
+
+      this.addSecondaryMasterworkHashValue(masterworkArray);
+
+      return masterworkArray;
+    }
+
+    return masterworkString.trim().split(" ");
+  },
+  getNotes: function() {
+    const baseNotes = $('itemNotes').val();
+    
+    return (baseNotes) ?
+      `#notes:${baseNotes}` :
+      null;
+  },
   generatePermutations: function() {
     const itemId = $("#itemId")
       .val()
       .trim();
 
-    const slotOneValues = this.getInitialPerkArray($("#slotOnePerks").val());
+    const slotOneValues = this.getPerkArray($("#slotOnePerks").val());
 
     if (!itemId) {
       $("#dimWishListContent").val(
@@ -268,15 +328,17 @@ const permuter = {
       return;
     }
 
-    const slotTwoValues = this.getInitialPerkArray($("#slotTwoPerks").val());
+    const slotTwoValues = this.getPerkArray($("#slotTwoPerks").val());
 
-    const slotThreeValues = this.getInitialPerkArray(
+    const slotThreeValues = this.getPerkArray(
       $("#slotThreePerks").val()
     );
 
-    const slotFourValues = this.getInitialPerkArray($("#slotFourPerks").val());
+    const slotFourValues = this.getPerkArray($("#slotFourPerks").val());
 
-    const slotFiveValues = this.getInitialPerkArray($("#slotFivePerks").val());
+    const slotFiveValues = this.getPerkArray($("#slotFivePerks").val());
+
+    const notes = this.getNotes();
 
     const generatedPermutations = [];
 
@@ -291,7 +353,7 @@ const permuter = {
                 .join(",");
 
               generatedPermutations.push(
-                `dimwishlist:item=${itemId}&perks=${perkString}`
+                `dimwishlist:item=${itemId}&perks=${perkString}${notes}`
               );
             });
           });
