@@ -27,7 +27,7 @@ const permuter = {
     "Solar Damage Resistance": 383171816,
     Stability: 384158423,
     Velocity: 654849177,
-    "Void Damage Resistance":1576279482
+    "Void Damage Resistance": 1576279482
   },
   secondaryHashMap: {
     1683379515: 3871884143, // disruption break (it's a barrel and a trait)
@@ -265,6 +265,10 @@ const permuter = {
     perkArray.push(...alsoKnownAsValues);
   },
   getPerkArray: function(perkString) {
+    if (!perkString) {
+      return [];
+    }
+
     if (perkString.match(/[a-z]/i)) {
       const perkArray = perkString
         .split(/\,|\//)
@@ -279,17 +283,42 @@ const permuter = {
 
     return perkString.trim().split(" ");
   },
+  optionallyTranslateMasterworkToHash: function(value) {
+    if (!value || !value.length) {
+      return value;
+    }
+
+    if (isNaN(value)) {
+      const hashValue = this.masterworkHashMap[value];
+
+      if (isNaN(hashValue)) {
+        $("#dimWishListContent").val(
+          `${value} is not a number and doesn't resemble a known masterwork hash.`
+        );
+        throw "";
+      }
+
+      return hashValue.toString();
+    }
+
+    return value;
+  },
   addSecondaryMasterworkHashValue: function(masterworkArray) {
     const masterworkAlsoKnownAsValues = masterworkArray
       .map(v => this.secondaryMasterworkHashMap[v])
       .filter(v => !isNaN(v))
       .map(v => v.toString());
 
-    perkArray.push(...masterworkAlsoKnownAsValues);
+    masterworkArray.push(...masterworkAlsoKnownAsValues);
   },
   getMasterworkPerkArray: function(masterworkString) {
+    if (!masterworkString) {
+      return [];
+    }
+
     if (masterworkString.match(/[a-z]/i)) {
       const masterworkArray = masterworkString
+        .replace("or", ",")
         .split(/\,|\//)
         .map(v => v.trim())
         .filter(v => v.length > 1)
@@ -303,11 +332,9 @@ const permuter = {
     return masterworkString.trim().split(" ");
   },
   getNotes: function() {
-    const baseNotes = $('itemNotes').val();
-    
-    return (baseNotes) ?
-      `#notes:${baseNotes}` :
-      null;
+    const baseNotes = $("#itemNotes").val();
+
+    return baseNotes ? `#notes:${baseNotes}` : '';
   },
   generatePermutations: function() {
     const itemId = $("#itemId")
@@ -330,19 +357,19 @@ const permuter = {
 
     const slotTwoValues = this.getPerkArray($("#slotTwoPerks").val());
 
-    const slotThreeValues = this.getPerkArray(
-      $("#slotThreePerks").val()
-    );
+    const slotThreeValues = this.getPerkArray($("#slotThreePerks").val());
 
     const slotFourValues = this.getPerkArray($("#slotFourPerks").val());
 
-    const slotFiveValues = this.getPerkArray($("#slotFivePerks").val());
+    const masterworkPerkValues = this.getMasterworkPerkArray(
+      $("#masterworkPerks").val()
+    );
 
     const notes = this.getNotes();
 
     const generatedPermutations = [];
 
-    slotFiveValues.forEach(sv => {
+    masterworkPerkValues.forEach(sv => {
       slotFourValues.forEach(so => {
         slotThreeValues.forEach(sh => {
           slotTwoValues.forEach(sw => {
