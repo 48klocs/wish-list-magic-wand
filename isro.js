@@ -146,6 +146,7 @@ const permuter = {
     "Meyrin RDL": 3433396027,
     "Meyrin RDS": 3433396026,
     "Micro-Missile": 3713839994,
+    "Mini Frags": 332133599,
     "Model 8 Red": 663495154,
     "Moving Target": 588594999,
     Mulligan: 3337692349,
