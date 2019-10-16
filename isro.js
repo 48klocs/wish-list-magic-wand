@@ -42,6 +42,7 @@ const permuter = {
     "50VAL Telescopic": 767484757,
     "Accelerated Coils": 689005463,
     "Accurized Rounds": 3142289711,
+    "Agile Bowstring": 3768438372,
     "Alloy Casing": 2985827016,
     "Alloy Mag": 1431678320,
     "Ambitious Assassin": 2010801679,
