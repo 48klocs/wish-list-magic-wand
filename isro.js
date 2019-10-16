@@ -120,6 +120,7 @@ const permuter = {
     "Hard Launch": 981914802,
     Headseeker: 460017080,
     "Heavy Guard": 2349202967,
+    "Helical Fletching": 3311977193,
     "High Tension String": 3371775011,
     "High-Caliber Rounds": 1561002382,
     "High-Explosive Ordnance": 1380253176,
