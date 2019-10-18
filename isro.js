@@ -271,7 +271,7 @@ const permuter = {
   },
   getPerkArray: function(perkString) {
     if (!perkString) {
-      return [];
+      return [''];
     }
 
     if (perkString.match(/[a-z]/i)) {
@@ -318,7 +318,7 @@ const permuter = {
   },
   getMasterworkPerkArray: function(masterworkString) {
     if (!masterworkString) {
-      return [];
+      return [''];
     }
 
     if (masterworkString.match(/[a-z]/i)) {
