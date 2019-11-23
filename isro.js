@@ -271,7 +271,7 @@ const permuter = {
   },
   getPerkArray: function(perkString) {
     if (!perkString) {
-      return [''];
+      return [""];
     }
 
     if (perkString.match(/[a-z]/i)) {
@@ -318,7 +318,7 @@ const permuter = {
   },
   getMasterworkPerkArray: function(masterworkString) {
     if (!masterworkString) {
-      return [''];
+      return [""];
     }
 
     if (masterworkString.match(/[a-z]/i)) {
@@ -339,10 +339,14 @@ const permuter = {
   getNotes: function() {
     const baseNotes = $("#itemNotes").val();
 
-    return baseNotes ? `#notes:${baseNotes}` : '';
+    return baseNotes ? `//notes:${baseNotes}` : "";
   },
   generatePermutations: function() {
     const itemId = $("#itemId")
+      .val()
+      .trim();
+
+    const itemName = $("#itemName")
       .val()
       .trim();
 
@@ -374,6 +378,15 @@ const permuter = {
 
     const generatedPermutations = [];
 
+    if (itemName) {
+      const itemHeader = `// ${itemName}`;
+      generatedPermutations.push(itemHeader);
+    }
+
+    if (notes) {
+      generatedPermutations.push(notes);
+    }
+
     masterworkPerkValues.forEach(sv => {
       slotFourValues.forEach(so => {
         slotThreeValues.forEach(sh => {
@@ -385,13 +398,15 @@ const permuter = {
                 .join(",");
 
               generatedPermutations.push(
-                `dimwishlist:item=${itemId}&perks=${perkString}${notes}`
+                `dimwishlist:item=${itemId}&perks=${perkString}`
               );
             });
           });
         });
       });
     });
+
+    generatedPermutations.push("");
 
     $("#dimWishListContent").val(generatedPermutations.join("\n"));
   }
