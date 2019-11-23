@@ -407,6 +407,7 @@ const permuter = {
     });
 
     generatedPermutations.push("");
+    generatedPermutations.push("");
 
     $("#dimWishListContent").val(generatedPermutations.join("\n"));
   }
