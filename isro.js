@@ -160,6 +160,7 @@ const permuter = {
     "Moving Target": 588594999,
     Mulligan: 3337692349,
     "Multikill Clip": 2458213969,
+    "Natural Fletching": 1500996326,
     "Natural String": 1784898267,
     "No Distractions": 2866798147,
     "One-Two Punch": 2679249093,
