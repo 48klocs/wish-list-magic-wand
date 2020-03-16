@@ -366,6 +366,26 @@ const permuter = {
 
     return baseNotes ? `//notes:${baseNotes}` : "";
   },
+  getTags: function() {
+    const tagsString = $("#tags").val();
+
+    if (!tagsString) {
+      return "";
+    }
+
+    return tagsString
+      .split(/\,|\//)
+      .map(v => v.trim())
+      .filter(v => v.length > 1)
+      .join(",");
+  },
+  getCommentedTags: function(tags) {
+    if (!tags) {
+      return "";
+    }
+
+    return `|tags:${tags}`;
+  },
   getUnformattedNotes: function() {
     const baseNotes = $("#itemNotes").val();
 
@@ -408,6 +428,8 @@ const permuter = {
     );
 
     const blockNotes = this.getNotes();
+    const tags = this.getTags();
+    const commentedTags = this.getCommentedTags(tags);
 
     const generatedPermutations = [];
 
@@ -431,7 +453,7 @@ const permuter = {
                 .join(",");
 
               generatedPermutations.push(
-                `dimwishlist:item=${itemId}&perks=${perkString}`
+                `dimwishlist:item=${itemId}&perks=${perkString}${commentedTags}`
               );
             });
           });
@@ -449,7 +471,8 @@ const permuter = {
       slotThreeValues,
       slotFourValues,
       masterworkPerkValues,
-      notes
+      notes,
+      tags
     };
 
     generatedPermutations.push("");
