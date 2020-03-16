@@ -1,3 +1,17 @@
+const isEmpty = function(value) {
+  if (value === null || value === undefined || value === '') {
+    return true;
+  }
+
+  if (Array.isArray(value)) {
+    return value.every(isEmpty);
+  } else if (typeof value === "object") {
+    return Object.values(value).every(isEmpty);
+  }
+
+  return false;
+};
+
 const permuter = {
   secondaryMasterworkHashMap: {
     178753455: 758092021, // reload -> reload speed
@@ -352,6 +366,14 @@ const permuter = {
 
     return baseNotes ? `//notes:${baseNotes}` : "";
   },
+  getUnformattedNotes: function() {
+    const baseNotes = $("#itemNotes").val();
+
+    return baseNotes ? baseNotes : "";
+  },
+  replacer(key, value) {
+    return isEmpty(value) ? undefined : value;
+  },
   generatePermutations: function() {
     const itemId = $("#itemId")
       .val()
@@ -385,7 +407,7 @@ const permuter = {
       $("#masterworkPerks").val()
     );
 
-    const notes = this.getNotes();
+    const blockNotes = this.getNotes();
 
     const generatedPermutations = [];
 
@@ -394,8 +416,8 @@ const permuter = {
       generatedPermutations.push(itemHeader);
     }
 
-    if (notes) {
-      generatedPermutations.push(notes);
+    if (blockNotes) {
+      generatedPermutations.push(blockNotes);
     }
 
     masterworkPerkValues.forEach(sv => {
@@ -416,6 +438,23 @@ const permuter = {
         });
       });
     });
+
+    const notes = this.getUnformattedNotes();
+
+    const jsonItem = {
+      itemName,
+      itemId,
+      slotOneValues,
+      slotTwoValues,
+      slotThreeValues,
+      slotFourValues,
+      masterworkPerkValues,
+      notes
+    };
+
+    generatedPermutations.push("");
+    generatedPermutations.push("");
+    generatedPermutations.push(JSON.stringify(jsonItem, this.replacer));
 
     generatedPermutations.push("");
     generatedPermutations.push("");
