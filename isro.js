@@ -361,10 +361,10 @@ const permuter = {
 
     return masterworkString.trim().split(" ");
   },
-  getNotes: function() {
+  getNotes: function(tags) {
     const baseNotes = $("#itemNotes").val();
 
-    return baseNotes ? `//notes:${baseNotes}` : "";
+    return (baseNotes || tags) ? `//notes:${baseNotes}` : "";
   },
   getTags: function() {
     const tagsString = $("#tags").val();
@@ -427,8 +427,8 @@ const permuter = {
       $("#masterworkPerks").val()
     );
 
-    const blockNotes = this.getNotes();
     const tags = this.getTags();
+    const blockNotes = this.getNotes(tags);
     const commentedTags = this.getCommentedTags(tags);
 
     const generatedPermutations = [];
