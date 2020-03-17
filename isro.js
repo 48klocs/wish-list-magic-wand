@@ -82,6 +82,7 @@ const permuter = {
     "Burst Guard": 3625355092,
     "Candle PS": 1409978309,
     "Carbon Arrow Shaft": 2154191829,
+    Celerity: 1264398905,
     "Chambered Compensator": 3661387068,
     "Cleanshot IS": 13792279,
     "Clown Cartridge": 2284787283,
