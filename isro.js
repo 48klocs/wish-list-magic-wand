@@ -1,5 +1,5 @@
 const isEmpty = function(value) {
-  if (value === null || value === undefined || value === '') {
+  if (value === null || value === undefined || value === "") {
     return true;
   }
 
@@ -364,7 +364,9 @@ const permuter = {
   getNotes: function(tags) {
     const baseNotes = $("#itemNotes").val();
 
-    return (baseNotes || tags) ? `//notes:${baseNotes}` : "";
+    const commentedTags = this.getCommentedTags(tags);
+
+    return baseNotes ? `//notes:${baseNotes}${commentedTags}` : "";
   },
   getTags: function() {
     const tagsString = $("#tags").val();
@@ -379,12 +381,12 @@ const permuter = {
       .filter(v => v.length > 1)
       .join(",");
   },
-  getCommentedTags: function(tags) {
+  getCommentedTags: function(tags, forLineLevel) {
     if (!tags) {
       return "";
     }
 
-    return `|tags:${tags}`;
+    return forLineLevel ? `#notes:|tags:${tags}` : `|tags:${tags}`;
   },
   getUnformattedNotes: function() {
     const baseNotes = $("#itemNotes").val();
@@ -429,7 +431,7 @@ const permuter = {
 
     const tags = this.getTags();
     const blockNotes = this.getNotes(tags);
-    const commentedTags = this.getCommentedTags(tags);
+    const commentedTags = this.getCommentedTags(tags, true);
 
     const generatedPermutations = [];
 
@@ -452,9 +454,15 @@ const permuter = {
                 .filter(v => v && v !== "")
                 .join(",");
 
-              generatedPermutations.push(
-                `dimwishlist:item=${itemId}&perks=${perkString}${commentedTags}`
-              );
+              if (!blockNotes) {
+                generatedPermutations.push(
+                  `dimwishlist:item=${itemId}&perks=${perkString}${commentedTags}`
+                );
+              } else {
+                generatedPermutations.push(
+                  `dimwishlist:item=${itemId}&perks=${perkString}`
+                );
+              }
             });
           });
         });
