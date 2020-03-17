@@ -486,7 +486,7 @@ const permuter = {
 
     generatedPermutations.push("");
     generatedPermutations.push("");
-    generatedPermutations.push(JSON.stringify(jsonItem, this.replacer));
+    generatedPermutations.push(`${JSON.stringify(jsonItem, this.replacer)},`);
 
     generatedPermutations.push("");
     generatedPermutations.push("");
