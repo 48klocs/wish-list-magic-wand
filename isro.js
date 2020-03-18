@@ -265,7 +265,7 @@ const permuter = {
     this.initEvents();
   },
   arrayHasValues: function(arrayToCheck) {
-    return arrayToCheck.some(v => v.length > 0);
+    return arrayToCheck.length > 0;
   },
   optionallyTranslateNameToHash: function(value) {
     if (!value || !value.length) {
@@ -452,8 +452,6 @@ const permuter = {
           slotTwoValues.forEach(sw => {
             slotOneValues.forEach(sn => {
               const perkString = [sn, sw, sh, so, sv]
-                .map(v => v.trim())
-                .filter(v => v && v !== "")
                 .join(",");
 
               if (!blockNotes) {
