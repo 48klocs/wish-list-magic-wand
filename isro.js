@@ -452,6 +452,7 @@ const permuter = {
           slotTwoValues.forEach(sw => {
             slotOneValues.forEach(sn => {
               const perkString = [sn, sw, sh, so, sv]
+                .filter(v => v)
                 .join(",");
 
               if (!blockNotes) {
