@@ -309,7 +309,8 @@ const permuter = {
 
       this.addSecondaryHashValue(perkArray);
 
-      return perkArray;
+      return perkArray
+        .map((v) => Number(v));
     }
 
     return perkString.trim().split(" ");
@@ -398,9 +399,9 @@ const permuter = {
     return isEmpty(value) ? undefined : value;
   },
   generatePermutations: function() {
-    const itemId = $("#itemId")
+    const itemId = Number($("#itemId")
       .val()
-      .trim();
+      .trim());
 
     const itemName = $("#itemName")
       .val()
