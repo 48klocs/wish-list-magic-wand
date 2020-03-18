@@ -301,8 +301,7 @@ const permuter = {
     }
 
     if (perkString.match(/[a-z]/i)) {
-      const perkArray = perkString
-        .split(/\,|\//)
+      const perkArray = this.splitOnDelimiters(perkString)
         .map(v => v.trim())
         .filter(v => v.length > 1)
         .map(v => this.optionallyTranslateNameToHash(v));
@@ -349,9 +348,8 @@ const permuter = {
     }
 
     if (masterworkString.match(/[a-z]/i)) {
-      const masterworkArray = masterworkString
-        .replace("or", ",")
-        .split(/\,|\//)
+      const masterworkArray = this.splitOnDelimiters(masterworkString
+        .replace("or", ","))
         .map(v => v.trim())
         .filter(v => v.length > 1)
         .map(v => this.optionallyTranslateMasterworkToHash(v));
@@ -363,12 +361,42 @@ const permuter = {
 
     return masterworkString.trim().split(" ");
   },
+  normalizeTag: function(tag) {
+    switch(tag)
+    {
+      case "pvp":
+        return "PvP";
+      case "pve":
+        return "PvE";
+      case "controller":
+        return "Controller";
+      case "mkb":
+        return "M+KB";
+      case "dps":
+        return "DPS";
+      default:
+        return `??? ${tag} ???`;
+    }
+  },
+  tagsToNotesPrefix: function(tags) {
+    const normalizedTags = this.splitOnDelimiters(tags)
+      .map(this.normalizeTag);
+
+    return ` (${normalizedTags
+      .filter(t => t)
+      .join(" / ")}): `;
+  },
   getNotes: function(tags) {
     const baseNotes = $("#itemNotes").val();
+    const reviewer = $("#reviewer").val();
+    const tagsPrefixed = this.tagsToNotesPrefix(tags);
 
     const commentedTags = this.getCommentedTags(tags);
 
-    return baseNotes ? `//notes:${baseNotes}${commentedTags}` : "";
+    return baseNotes ? `//notes:${reviewer}${tagsPrefixed}${baseNotes}${commentedTags}` : "";
+  },
+  splitOnDelimiters: function(inputString) {
+    return inputString.split(/\,|\//);
   },
   getTags: function() {
     const tagsString = $("#tags").val();
@@ -377,8 +405,7 @@ const permuter = {
       return "";
     }
 
-    return tagsString
-      .split(/\,|\//)
+    return this.splitOnDelimiters(tagsString)      
       .map(v => v.trim())
       .filter(v => v.length > 1)
       .join(",");
