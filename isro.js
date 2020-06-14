@@ -59,6 +59,7 @@ const permuter = {
     "Agile Bowstring": 3768438372,
     "Alloy Casing": 2985827016,
     "Alloy Mag": 1431678320,
+    Alloy Magazine: 1431678320,
     "Ambitious Assassin": 2010801679,
     "Appended Mag": 1087426260,
     "Archer's Gambit": 3414324643,
