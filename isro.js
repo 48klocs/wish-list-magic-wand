@@ -248,6 +248,7 @@ const permuter = {
     Surrounded: 3708227201,
     Swashbuckler: 4082225868,
     "Swordmaster's Guard": 269888150,
+    "Sympathetic Arsenal": 3350417888,
     "Tactic SAS": 445755704,
     "Tactical Mag": 106909392,
     "Tactile String": 1196733167,
