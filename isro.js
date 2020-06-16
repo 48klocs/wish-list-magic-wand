@@ -264,6 +264,7 @@ const permuter = {
     "TrueSight HCS": 1926090092,
     "Under Pressure": 1645158859,
     Underdog: 205890336,
+    Unrelenting: 3108830275,
     "Volatile Launch": 332773068,
     "Vorpal Weapon": 1546637391,
     "Whirlwind Blade": 3913600130,
