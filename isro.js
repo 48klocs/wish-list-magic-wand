@@ -165,6 +165,7 @@ const permuter = {
     "Jagged Edge": 3666208348,
     "Kill Clip": 1015611457,
     "Killing Tally": 2782457288,
+    "Killing Wind": 2450788523,
     "King Dot K2": 1452368633,
     "King Sight K1": 1288081797,
     "Lead from Gold": 1556840489,
