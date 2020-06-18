@@ -160,6 +160,8 @@ const permuter = {
     "Implosion Rounds": 3492396210,
     "Impulse MS3": 194952922,
     "Ionized Battery": 1483536627,
+    "Iron Gaze": 4152709778,
+    "Iron Grip": 11551321,
     "IS 2 Classic": 2209280307,
     "IS 5 Circle": 2209280306,
     "Jagged Edge": 3666208348,
