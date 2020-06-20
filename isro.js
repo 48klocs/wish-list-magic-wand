@@ -217,6 +217,7 @@ const permuter = {
     "Reservoir Burst": 1427256713,
     "Reversal of Fortune": 136456835,
     "Ricochet Rounds": 1885400500,
+    "Rifle Scope ST": 679077873,
     "Rifled Barrel": 1332244541,
     "SC Holo": 2054312700,
     "Seraph Rounds": 1140096971,
