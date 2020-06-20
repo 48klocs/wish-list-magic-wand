@@ -219,6 +219,7 @@ const permuter = {
     "Ricochet Rounds": 1885400500,
     "Rifled Barrel": 1332244541,
     "SC Holo": 2054312700,
+    "Seraph Rounds": 1140096971,
     "Shattering Blade": 818211479,
     "Shield Disorient": 3275789089,
     "Shortspec SAS": 445755705,
