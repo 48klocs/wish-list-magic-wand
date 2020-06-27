@@ -1,4 +1,4 @@
-const isEmpty = function(value) {
+const isEmpty = function (value) {
   if (value === null || value === undefined || value === "") {
     return true;
   }
@@ -25,7 +25,7 @@ const permuter = {
     1431498388: 3128594062, // charge time + impact -> ct + i
     915325363: 3128594062, // charge time + impact -> ct + i,
     3130025796: 3833978555, // arc damage resistance -> adr
-    1576279482: 3870201881 // void damage resistance -> vdr
+    1576279482: 3870201881, // void damage resistance -> vdr
   },
   masterworkHashMap: {
     Accuracy: 2674077375,
@@ -41,7 +41,7 @@ const permuter = {
     "Solar Damage Resistance": 383171816,
     Stability: 384158423,
     Velocity: 654849177,
-    "Void Damage Resistance": 1576279482
+    "Void Damage Resistance": 1576279482,
   },
   secondaryHashMap: {
     1683379515: 3871884143, // disruption break (it's a barrel and a trait)
@@ -50,7 +50,7 @@ const permuter = {
     3337692349: 3513791699, // mulligan
     1168162263: 3124871000, // outlaw
     806159697: 2360754333, // trench barrel (barrel -> trait)
-    332773068: 1478423395 // volatile launch
+    332773068: 1478423395, // volatile launch
   },
   nameHashMap: {
     "50VAL Telescopic": 767484757,
@@ -276,20 +276,20 @@ const permuter = {
     "Whirlwind Blade": 3913600130,
     "Wolf Dot W2": 1452368632,
     "Wolf Sight W1": 1288081796,
-    "Zen Moment": 2387244414
+    "Zen Moment": 2387244414,
   },
-  initEvents: function() {
+  initEvents: function () {
     $("#generatePermutations").click(() => {
       this.generatePermutations();
     });
   },
-  init: function() {
+  init: function () {
     this.initEvents();
   },
-  arrayHasValues: function(arrayToCheck) {
+  arrayHasValues: function (arrayToCheck) {
     return arrayToCheck.length > 0;
   },
-  optionallyTranslateNameToHash: function(value) {
+  optionallyTranslateNameToHash: function (value) {
     if (!value || !value.length) {
       return value;
     }
@@ -309,34 +309,33 @@ const permuter = {
 
     return value;
   },
-  addSecondaryHashValue: function(perkArray) {
+  addSecondaryHashValue: function (perkArray) {
     const alsoKnownAsValues = perkArray
-      .map(v => this.secondaryHashMap[v])
-      .filter(v => !isNaN(v))
-      .map(v => v.toString());
+      .map((v) => this.secondaryHashMap[v])
+      .filter((v) => !isNaN(v))
+      .map((v) => v.toString());
 
     perkArray.push(...alsoKnownAsValues);
   },
-  getPerkArray: function(perkString) {
+  getPerkArray: function (perkString) {
     if (!perkString) {
       return [""];
     }
 
     if (perkString.match(/[a-z]/i)) {
       const perkArray = this.splitOnDelimiters(perkString)
-        .map(v => v.trim())
-        .filter(v => v.length > 1)
-        .map(v => this.optionallyTranslateNameToHash(v));
+        .map((v) => v.trim())
+        .filter((v) => v.length > 1)
+        .map((v) => this.optionallyTranslateNameToHash(v));
 
       this.addSecondaryHashValue(perkArray);
 
-      return perkArray
-        .map((v) => Number(v));
+      return perkArray.map((v) => Number(v));
     }
 
     return perkString.trim().split(" ");
   },
-  optionallyTranslateMasterworkToHash: function(value) {
+  optionallyTranslateMasterworkToHash: function (value) {
     if (!value || !value.length) {
       return value;
     }
@@ -356,25 +355,26 @@ const permuter = {
 
     return value;
   },
-  addSecondaryMasterworkHashValue: function(masterworkArray) {
+  addSecondaryMasterworkHashValue: function (masterworkArray) {
     const masterworkAlsoKnownAsValues = masterworkArray
-      .map(v => this.secondaryMasterworkHashMap[v])
-      .filter(v => !isNaN(v))
-      .map(v => v.toString());
+      .map((v) => this.secondaryMasterworkHashMap[v])
+      .filter((v) => !isNaN(v))
+      .map((v) => v.toString());
 
     masterworkArray.push(...masterworkAlsoKnownAsValues);
   },
-  getMasterworkPerkArray: function(masterworkString) {
+  getMasterworkPerkArray: function (masterworkString) {
     if (!masterworkString) {
       return [""];
     }
 
     if (masterworkString.match(/[a-z]/i)) {
-      const masterworkArray = this.splitOnDelimiters(masterworkString
-        .replace("or", ","))
-        .map(v => v.trim())
-        .filter(v => v.length > 1)
-        .map(v => this.optionallyTranslateMasterworkToHash(v));
+      const masterworkArray = this.splitOnDelimiters(
+        masterworkString.replace("or", ",")
+      )
+        .map((v) => v.trim())
+        .filter((v) => v.length > 1)
+        .map((v) => this.optionallyTranslateMasterworkToHash(v));
 
       this.addSecondaryMasterworkHashValue(masterworkArray);
 
@@ -383,9 +383,8 @@ const permuter = {
 
     return masterworkString.trim().split(" ");
   },
-  normalizeTag: function(tag) {
-    switch(tag)
-    {
+  normalizeTag: function (tag) {
+    switch (tag) {
       case "pvp":
         return "PvP";
       case "pve":
@@ -396,50 +395,51 @@ const permuter = {
         return "M+KB";
       case "dps":
         return "DPS";
+      case "gambit":
+        return "Gambit";
       default:
         return `??? ${tag} ???`;
     }
   },
-  tagsToNotesPrefix: function(tags) {
-    const normalizedTags = this.splitOnDelimiters(tags)
-      .map(this.normalizeTag);
+  tagsToNotesPrefix: function (tags) {
+    const normalizedTags = this.splitOnDelimiters(tags).map(this.normalizeTag);
 
-    return ` (${normalizedTags
-      .filter(t => t)
-      .join(" / ")}): `;
+    return ` (${normalizedTags.filter((t) => t).join(" / ")}): `;
   },
-  getNotes: function(tags) {
+  getNotes: function (tags) {
     const baseNotes = $("#itemNotes").val();
     const reviewer = $("#reviewer").val();
     const tagsPrefixed = this.tagsToNotesPrefix(tags);
 
     const commentedTags = this.getCommentedTags(tags);
 
-    return baseNotes ? `//notes:${reviewer}${tagsPrefixed}${baseNotes}${commentedTags}` : "";
+    return baseNotes
+      ? `//notes:${reviewer}${tagsPrefixed}${baseNotes}${commentedTags}`
+      : "";
   },
-  splitOnDelimiters: function(inputString) {
+  splitOnDelimiters: function (inputString) {
     return inputString.split(/\,|\//);
   },
-  getTags: function() {
+  getTags: function () {
     const tagsString = $("#tags").val();
 
     if (!tagsString) {
       return "";
     }
 
-    return this.splitOnDelimiters(tagsString)      
-      .map(v => v.trim())
-      .filter(v => v.length > 1)
+    return this.splitOnDelimiters(tagsString)
+      .map((v) => v.trim())
+      .filter((v) => v.length > 1)
       .join(",");
   },
-  getCommentedTags: function(tags, forLineLevel) {
+  getCommentedTags: function (tags, forLineLevel) {
     if (!tags) {
       return "";
     }
 
     return forLineLevel ? `#notes:|tags:${tags}` : `|tags:${tags}`;
   },
-  getUnformattedNotes: function() {
+  getUnformattedNotes: function () {
     const baseNotes = $("#itemNotes").val();
 
     return baseNotes ? baseNotes : "";
@@ -447,14 +447,10 @@ const permuter = {
   replacer(key, value) {
     return isEmpty(value) ? undefined : value;
   },
-  generatePermutations: function() {
-    const itemId = Number($("#itemId")
-      .val()
-      .trim());
+  generatePermutations: function () {
+    const itemId = Number($("#itemId").val().trim());
 
-    const itemName = $("#itemName")
-      .val()
-      .trim();
+    const itemName = $("#itemName").val().trim();
 
     const slotOneValues = this.getPerkArray($("#slotOnePerks").val());
 
@@ -495,13 +491,13 @@ const permuter = {
       generatedPermutations.push(blockNotes);
     }
 
-    masterworkPerkValues.forEach(sv => {
-      slotFourValues.forEach(so => {
-        slotThreeValues.forEach(sh => {
-          slotTwoValues.forEach(sw => {
-            slotOneValues.forEach(sn => {
+    masterworkPerkValues.forEach((sv) => {
+      slotFourValues.forEach((so) => {
+        slotThreeValues.forEach((sh) => {
+          slotTwoValues.forEach((sw) => {
+            slotOneValues.forEach((sn) => {
               const perkString = [sn, sw, sh, so, sv]
-                .filter(v => v)
+                .filter((v) => v)
                 .join(",");
 
               if (!blockNotes) {
@@ -530,7 +526,7 @@ const permuter = {
       slotFourValues,
       masterworkPerkValues,
       notes,
-      tags
+      tags,
     };
 
     generatedPermutations.push("");
@@ -541,5 +537,5 @@ const permuter = {
     generatedPermutations.push("");
 
     $("#dimWishListContent").val(generatedPermutations.join("\n"));
-  }
+  },
 };
