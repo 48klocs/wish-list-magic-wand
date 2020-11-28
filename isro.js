@@ -537,12 +537,31 @@ const permuter = {
     console.log(lineMatches);
 
     const itemId = Number(lineMatches[1]);
-    console.log(itemId);
 
     if (isNaN(itemId)) {
       $("#dimWishListContent").val(`${lineMatches[1]} is not an item hash.`);
       return;
     }
+
+    const allPerks = lineMatches[2].split(', ');
+
+    const firstPerks = this.getPerkArray(allPerks[0]);
+    const secondPerks = this.getPerkArray(allPerks[1]);
+    const thirdPerks = this.getPerkArray(allPerks[2]);
+    const fourthPerks = this.getPerkArray(allPerks[3]);
+
+    const masterworkColumn = lineMatches[6];
+
+    const reviewer = $("#reviewer").val();
+    const lineComment = `${reviewer} - ${listName}. Recommended MW - ${masterworkColumn}`;
+
+    calculateAndOutputPermutations([],
+      fourthPerks,
+      thirdPerks,
+      secondPerks,
+      firstPerks,
+      lineComment,
+      []);
   },
   generateBigListPermutations: function() {
     const bigListText = $('#combinatedList').val();
@@ -596,23 +615,25 @@ function calculateAndOutputPermutations(masterworkPerkValues,
     });
   });
 
-  const notes = this.getUnformattedNotes();
+  if (!listName) {
+    const notes = this.getUnformattedNotes();
 
-  const jsonItem = {
-    itemName,
-    itemId,
-    slotOneValues,
-    slotTwoValues,
-    slotThreeValues,
-    slotFourValues,
-    masterworkPerkValues,
-    notes,
-    tags,
-  };
-
-  generatedPermutations.push("");
-  generatedPermutations.push("");
-  generatedPermutations.push(`${JSON.stringify(jsonItem, this.replacer)},`);
+    const jsonItem = {
+      itemName,
+      itemId,
+      slotOneValues,
+      slotTwoValues,
+      slotThreeValues,
+      slotFourValues,
+      masterworkPerkValues,
+      notes,
+      tags,
+    };
+  
+    generatedPermutations.push("");
+    generatedPermutations.push("");
+    generatedPermutations.push(`${JSON.stringify(jsonItem, this.replacer)},`);
+  }
 
   generatedPermutations.push("");
   generatedPermutations.push("");
