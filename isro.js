@@ -191,7 +191,7 @@ const permuter = {
     "Natural Fletching": 1500996326,
     "Natural String": 1784898267,
     "No Distractions": 2866798147,
-    "One for All": 4049631843 ,
+    "One for All": 4049631843,
     "One-Two Punch": 2679249093,
     Onslaught: 95528736,
     "Opening Shot": 47981717,
