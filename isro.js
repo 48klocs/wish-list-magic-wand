@@ -527,7 +527,22 @@ const permuter = {
       return;
     }
 
-    console.log(inputLine);
+    const lineMatches = inputLine.match(/(.*): ((.*), )(.*)w\/(.*)/);
+
+    if (lineMatches == null) {
+      listName = inputLine;
+      return;
+    }
+
+    console.log(lineMatches);
+
+    const itemId = Number(lineMatches[1]);
+    console.log(itemId);
+
+    if (isNaN(itemId)) {
+      $("#dimWishListContent").val(`${lineMatches[1]} is not an item hash.`);
+      return;
+    }
   },
   generateBigListPermutations: function() {
     const bigListText = $('#combinatedList').val();
