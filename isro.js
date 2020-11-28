@@ -1,3 +1,5 @@
+let listName = '';
+
 const isEmpty = function (value) {
   if (value === null || value === undefined || value === "") {
     return true;
@@ -521,6 +523,10 @@ const permuter = {
       tags);
   },
   transformInputLine: function(inputLine) {
+    if (!inputLine) {
+      return;
+    }
+
     console.log(inputLine);
   },
   generateBigListPermutations: function() {
