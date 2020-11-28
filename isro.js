@@ -520,8 +520,24 @@ const permuter = {
       itemName,
       tags);
   },
+  transformInputLine: function(inputLine) {
+    console.log(inputLine);
+  },
   generateBigListPermutations: function() {
-    console.log('big big big');
+    const bigListText = $('#combinatedList').val();
+
+    if (!bigListText) {
+      $("#dimWishListContent").val("There seems to be no combinated list.");
+      return;
+    }
+
+    const inputLines = bigListText.split('\n');
+
+    if (!inputLines || !inputLines.length) {
+      $("#dimWishListContent").val("The combinated list had no lines?");
+    }
+
+    inputLines.forEach(il => this.transformInputLine(il));
   }
 };
 function calculateAndOutputPermutations(masterworkPerkValues,
