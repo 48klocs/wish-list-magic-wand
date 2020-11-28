@@ -288,9 +288,16 @@ const permuter = {
     "Wolf Sight W1": 1288081796,
     "Zen Moment": 2387244414,
   },
+  regexListFilledOut: function() {
+    return Boolean($('#combinatedList').val());
+  },
   initEvents: function () {
     $("#generatePermutations").click(() => {
-      this.generatePermutations();
+      if (this.regexListFilledOut()) {
+        this.generateBigListPermutations();
+      } else {
+        this.generatePermutations();
+      }
     });
   },
   init: function () {
@@ -501,51 +508,78 @@ const permuter = {
       generatedPermutations.push(blockNotes);
     }
 
-    masterworkPerkValues.forEach((sv) => {
-      slotFourValues.forEach((so) => {
-        slotThreeValues.forEach((sh) => {
-          slotTwoValues.forEach((sw) => {
-            slotOneValues.forEach((sn) => {
-              const perkString = [sn, sw, sh, so, sv]
-                .filter((v) => v)
-                .join(",");
+    calculateAndOutputPermutations(masterworkPerkValues,
+      slotFourValues,
+      slotThreeValues,
+      slotTwoValues,
+      slotOneValues,
+      blockNotes,
+      generatedPermutations,
+      itemId,
+      commentedTags,
+      itemName,
+      tags);
+  },
+  generateBigListPermutations: function() {
+    console.log('big big big');
+  }
+};
+function calculateAndOutputPermutations(masterworkPerkValues,
+  slotFourValues,
+  slotThreeValues,
+  slotTwoValues,
+  slotOneValues,
+  blockNotes,
+  generatedPermutations,
+  itemId,
+  commentedTags,
+  itemName,
+  tags) {
+  masterworkPerkValues.forEach((sv) => {
+    slotFourValues.forEach((so) => {
+      slotThreeValues.forEach((sh) => {
+        slotTwoValues.forEach((sw) => {
+          slotOneValues.forEach((sn) => {
+            const perkString = [sn, sw, sh, so, sv]
+              .filter((v) => v)
+              .join(",");
 
-              if (!blockNotes) {
-                generatedPermutations.push(
-                  `dimwishlist:item=${itemId}&perks=${perkString}${commentedTags}`
-                );
-              } else {
-                generatedPermutations.push(
-                  `dimwishlist:item=${itemId}&perks=${perkString}`
-                );
-              }
-            });
+            if (!blockNotes) {
+              generatedPermutations.push(
+                `dimwishlist:item=${itemId}&perks=${perkString}${commentedTags}`
+              );
+            } else {
+              generatedPermutations.push(
+                `dimwishlist:item=${itemId}&perks=${perkString}`
+              );
+            }
           });
         });
       });
     });
+  });
 
-    const notes = this.getUnformattedNotes();
+  const notes = this.getUnformattedNotes();
 
-    const jsonItem = {
-      itemName,
-      itemId,
-      slotOneValues,
-      slotTwoValues,
-      slotThreeValues,
-      slotFourValues,
-      masterworkPerkValues,
-      notes,
-      tags,
-    };
+  const jsonItem = {
+    itemName,
+    itemId,
+    slotOneValues,
+    slotTwoValues,
+    slotThreeValues,
+    slotFourValues,
+    masterworkPerkValues,
+    notes,
+    tags,
+  };
 
-    generatedPermutations.push("");
-    generatedPermutations.push("");
-    generatedPermutations.push(`${JSON.stringify(jsonItem, this.replacer)},`);
+  generatedPermutations.push("");
+  generatedPermutations.push("");
+  generatedPermutations.push(`${JSON.stringify(jsonItem, this.replacer)},`);
 
-    generatedPermutations.push("");
-    generatedPermutations.push("");
+  generatedPermutations.push("");
+  generatedPermutations.push("");
 
-    $("#dimWishListContent").val(generatedPermutations.join("\n"));
-  },
-};
+  $("#dimWishListContent").val(generatedPermutations.join("\n"));
+}
+
