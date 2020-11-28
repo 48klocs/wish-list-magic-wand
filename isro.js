@@ -543,10 +543,12 @@ const permuter = {
 
     const allPerks = lineMatches[2].split(', ');
 
+    console.log(allPerks);
+
     const firstPerks = this.getPerkArray(allPerks[0]);
     const secondPerks = this.getPerkArray(allPerks[1]);
     const thirdPerks = this.getPerkArray(allPerks[2]);
-    const fourthPerks = this.getPerkArray(allPerks[3]);
+    const fourthPerks = this.getPerkArray(lineMatches[4]);
 
     const masterworkColumn = lineMatches[6];
 
@@ -613,8 +615,6 @@ function calculateAndOutputPermutations(masterworkPerkValues,
       });
     });
   });
-
-  console.log(generatedPermutations);
 
   if (!listName) {
     const notes = this.getUnformattedNotes();
