@@ -534,8 +534,6 @@ const permuter = {
       return;
     }
 
-    console.log(lineMatches);
-
     const itemId = Number(lineMatches[1]);
 
     if (isNaN(itemId)) {
@@ -555,13 +553,14 @@ const permuter = {
     const reviewer = $("#reviewer").val();
     const lineComment = `${reviewer} - ${listName}. Recommended MW - ${masterworkColumn}`;
 
-    calculateAndOutputPermutations([],
+    calculateAndOutputPermutations([""],
       fourthPerks,
       thirdPerks,
       secondPerks,
       firstPerks,
       lineComment,
-      []);
+      [],
+      itemId);
   },
   generateBigListPermutations: function() {
     const bigListText = $('#combinatedList').val();
@@ -615,6 +614,8 @@ function calculateAndOutputPermutations(masterworkPerkValues,
     });
   });
 
+  console.log(generatedPermutations);
+
   if (!listName) {
     const notes = this.getUnformattedNotes();
 
@@ -638,6 +639,11 @@ function calculateAndOutputPermutations(masterworkPerkValues,
   generatedPermutations.push("");
   generatedPermutations.push("");
 
-  $("#dimWishListContent").val(generatedPermutations.join("\n"));
+  if (!listName) {
+    $("#dimWishListContent").val(generatedPermutations.join("\n"));
+  } else {
+    const currentContent = $("#dimWishListContent").val();
+    $("#dimWishListContent").val(currentContent + "\n" + "\n" + generatedPermutations.join("\n"));
+  }
 }
 
