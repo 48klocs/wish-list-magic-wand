@@ -550,21 +550,23 @@ const permuter = {
     const thirdPerks = this.getPerkArray(allPerks[2]);
     const fourthPerks = this.getPerkArray(lineMatches[4]);
 
-    const masterworkColumn = lineMatches[6];
+    const masterworkColumn = lineMatches[5].replace(' MW', '');
 
     const reviewer = $("#reviewer").val();
-    const lineComment = `${reviewer} - ${listName}. Recommended MW - ${masterworkColumn}`;
+    const lineComment = `//notes:${listName}. Recommended MW - ${masterworkColumn}`;
 
     calculateAndOutputPermutations([""],
       fourthPerks,
       thirdPerks,
       secondPerks,
       firstPerks,
-      lineComment,
+      null,
       [],
-      itemId);
+      itemId,
+      lineComment);
   },
   generateBigListPermutations: function() {
+    $("#dimWishListContent").val("");
     const bigListText = $('#combinatedList').val();
 
     if (!bigListText) {
