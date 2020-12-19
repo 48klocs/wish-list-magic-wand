@@ -543,8 +543,6 @@ const permuter = {
 
     const allPerks = lineMatches[2].split(', ');
 
-    console.log(allPerks);
-
     const firstPerks = this.getPerkArray(allPerks[0]);
     const secondPerks = this.getPerkArray(allPerks[1]);
     const thirdPerks = this.getPerkArray(allPerks[2]);
@@ -619,7 +617,7 @@ function calculateAndOutputPermutations(masterworkPerkValues,
   });
 
   if (!listName) {
-    const notes = this.getUnformattedNotes();
+    const notes = permuter.getUnformattedNotes();
 
     const jsonItem = {
       itemName,
