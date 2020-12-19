@@ -21,6 +21,7 @@ const permuter = {
     915325363: 1431498388, // charge time + impact
     1431498388: 1639384016, // draw time + charge time
     186337601: 2357520979, // handling -> handling
+    862848869: 2078097559, // polymer grip -> polymer grip
     684616255: 2697220197, // range -> range
     384158423: 2942552113, // stability -> stability
     2674077375: 2993547493, // accuracy -> accuracy
@@ -202,6 +203,7 @@ const permuter = {
     Overflow: 3643424744,
     "Particle Repeater": 3868766766,
     "Polygonal Rifling": 1392496348,
+    "Polymer Grip": 862848869,
     "Polymer String": 852209214,
     "Projection Fuse": 2969185026,
     "Proximity Grenades": 409831596,
@@ -241,6 +243,7 @@ const permuter = {
     "SLO-21 Post": 965619220,
     Smallbore: 1482024992,
     "Smart Drift Control": 3798852852,
+    "Smooth Grip": 3326204863,
     "Snapshot Sights": 957782887,
     "Sneak Bow": 908147344,
     "Spark PS": 1409978308,
