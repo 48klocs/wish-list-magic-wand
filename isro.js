@@ -147,6 +147,7 @@ const permuter = {
     "Hammer-Forged Rifling": 3250034553,
     "Hard Launch": 981914802,
     Headseeker: 460017080,
+    "Heavy Grip": 1012699414,
     "Heavy Guard": 2349202967,
     "Helical Fletching": 3311977193,
     "High Tension String": 3371775011,
