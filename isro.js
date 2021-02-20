@@ -652,7 +652,7 @@ function calculateAndOutputPermutations(
   // }
 
   generatedPermutations.push("");
-  generatedPermutations.push("");
+  generatedPermutations.push("\n");
 
   if (!listName) {
     $("#dimWishListContent").val(generatedPermutations.join("\n"));
