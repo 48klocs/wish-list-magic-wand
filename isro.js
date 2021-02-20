@@ -631,25 +631,25 @@ function calculateAndOutputPermutations(
     });
   });
 
-  if (!listName) {
-    const notes = permuter.getUnformattedNotes();
+  // if (!listName) {
+  //   const notes = permuter.getUnformattedNotes();
 
-    const jsonItem = {
-      itemName,
-      itemId,
-      slotOneValues,
-      slotTwoValues,
-      slotThreeValues,
-      slotFourValues,
-      masterworkPerkValues,
-      notes,
-      tags,
-    };
+  //   const jsonItem = {
+  //     itemName,
+  //     itemId,
+  //     slotOneValues,
+  //     slotTwoValues,
+  //     slotThreeValues,
+  //     slotFourValues,
+  //     masterworkPerkValues,
+  //     notes,
+  //     tags,
+  //   };
 
-    generatedPermutations.push("");
-    generatedPermutations.push("");
-    generatedPermutations.push(`${JSON.stringify(jsonItem, this.replacer)},`);
-  }
+  //   generatedPermutations.push("");
+  //   generatedPermutations.push("");
+  //   generatedPermutations.push(`${JSON.stringify(jsonItem, this.replacer)},`);
+  // }
 
   generatedPermutations.push("");
   generatedPermutations.push("");
