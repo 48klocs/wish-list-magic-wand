@@ -1,4 +1,4 @@
-let listName = '';
+let listName = "";
 
 const isEmpty = function (value) {
   if (value === null || value === undefined || value === "") {
@@ -301,8 +301,8 @@ const permuter = {
     "Wolf Sight W1": 1288081796,
     "Zen Moment": 2387244414,
   },
-  regexListFilledOut: function() {
-    return Boolean($('#combinatedList').val());
+  regexListFilledOut: function () {
+    return Boolean($("#combinatedList").val());
   },
   initEvents: function () {
     $("#generatePermutations").click(() => {
@@ -521,7 +521,8 @@ const permuter = {
       generatedPermutations.push(blockNotes);
     }
 
-    calculateAndOutputPermutations(masterworkPerkValues,
+    calculateAndOutputPermutations(
+      masterworkPerkValues,
       slotFourValues,
       slotThreeValues,
       slotTwoValues,
@@ -531,9 +532,10 @@ const permuter = {
       itemId,
       commentedTags,
       itemName,
-      tags);
+      tags
+    );
   },
-  transformInputLine: function(inputLine) {
+  transformInputLine: function (inputLine) {
     if (!inputLine) {
       return;
     }
@@ -552,19 +554,20 @@ const permuter = {
       return;
     }
 
-    const allPerks = lineMatches[2].split(', ');
+    const allPerks = lineMatches[2].split(", ");
 
     const firstPerks = this.getPerkArray(allPerks[0]);
     const secondPerks = this.getPerkArray(allPerks[1]);
     const thirdPerks = this.getPerkArray(allPerks[2]);
     const fourthPerks = this.getPerkArray(lineMatches[4]);
 
-    const masterworkColumn = lineMatches[5].replace(' MW', '');
+    const masterworkColumn = lineMatches[5].replace(" MW", "");
 
     const reviewer = $("#reviewer").val();
     const lineComment = `//notes:${listName}. Recommended MW - ${masterworkColumn}`;
 
-    calculateAndOutputPermutations([""],
+    calculateAndOutputPermutations(
+      [""],
       fourthPerks,
       thirdPerks,
       secondPerks,
@@ -572,27 +575,29 @@ const permuter = {
       null,
       [],
       itemId,
-      lineComment);
+      lineComment
+    );
   },
-  generateBigListPermutations: function() {
+  generateBigListPermutations: function () {
     $("#dimWishListContent").val("");
-    const bigListText = $('#combinatedList').val();
+    const bigListText = $("#combinatedList").val();
 
     if (!bigListText) {
       $("#dimWishListContent").val("There seems to be no combinated list.");
       return;
     }
 
-    const inputLines = bigListText.split('\n');
+    const inputLines = bigListText.split("\n");
 
     if (!inputLines || !inputLines.length) {
       $("#dimWishListContent").val("The combinated list had no lines?");
     }
 
-    inputLines.forEach(il => this.transformInputLine(il));
-  }
+    inputLines.forEach((il) => this.transformInputLine(il));
+  },
 };
-function calculateAndOutputPermutations(masterworkPerkValues,
+function calculateAndOutputPermutations(
+  masterworkPerkValues,
   slotFourValues,
   slotThreeValues,
   slotTwoValues,
@@ -602,15 +607,14 @@ function calculateAndOutputPermutations(masterworkPerkValues,
   itemId,
   commentedTags,
   itemName,
-  tags) {
+  tags
+) {
   masterworkPerkValues.forEach((sv) => {
     slotFourValues.forEach((so) => {
       slotThreeValues.forEach((sh) => {
         slotTwoValues.forEach((sw) => {
           slotOneValues.forEach((sn) => {
-            const perkString = [sn, sw, sh, so, sv]
-              .filter((v) => v)
-              .join(",");
+            const perkString = [sn, sw, sh, so, sv].filter((v) => v).join(",");
 
             if (!blockNotes) {
               generatedPermutations.push(
@@ -641,7 +645,7 @@ function calculateAndOutputPermutations(masterworkPerkValues,
       notes,
       tags,
     };
-  
+
     generatedPermutations.push("");
     generatedPermutations.push("");
     generatedPermutations.push(`${JSON.stringify(jsonItem, this.replacer)},`);
@@ -654,7 +658,8 @@ function calculateAndOutputPermutations(masterworkPerkValues,
     $("#dimWishListContent").val(generatedPermutations.join("\n"));
   } else {
     const currentContent = $("#dimWishListContent").val();
-    $("#dimWishListContent").val(currentContent + "\n" + "\n" + generatedPermutations.join("\n"));
+    $("#dimWishListContent").val(
+      currentContent + "\n" + "\n" + generatedPermutations.join("\n")
+    );
   }
 }
-
