@@ -29,6 +29,7 @@ const permuter = {
     915325363: 3128594062, // charge time + impact -> ct + i,
     3130025796: 3833978555, // arc damage resistance -> adr
     1576279482: 3870201881, // void damage resistance -> vdr
+    1467527085: 2420895100, // extended barrel -> extended mag
   },
   masterworkHashMap: {
     Accuracy: 2674077375,
@@ -306,9 +307,9 @@ const permuter = {
   },
   abbreviatedNameMap: {
     "4TTC": "Fourth Time's the Charm",
+    Arrowhead: "Arrowhead Brake",
     "Ex Pay": "Explosive Payload",
     Extended: "Extended Barrel",
-    Extended: "Extended Mag",
     Fluted: "Fluted Barrel",
     OFA: "One for All",
     "Res Burs": "Reservoir Burst",
@@ -549,6 +550,22 @@ const permuter = {
       tags
     );
   },
+  translateTerseToExpanded: function(shortPerkNames) {
+    if (!shortPerkNames) {
+      return;
+    }
+
+    const shortPerkArray = shortPerkNames.split('/');
+
+    const missingTranslations = shortPerkArray.filter((spn) => !Boolean(this.abbreviatedNameMap[spn]));
+
+    if (missingTranslations.length) {
+      $("#dimWishListContent").val(`Missing terse translations: ${missingTranslations.join(',')}`);
+      throw `Missing terse translations: ${missingTranslations.join(',')}`;
+    }
+
+    return shortPerkArray.map((spn) => this.abbreviatedNameMap[spn]).join('/');
+  },
   transformInputLine: function (inputLine) {
     if (!inputLine) {
       return;
@@ -570,10 +587,11 @@ const permuter = {
 
     const allPerks = lineMatches[2].split(", ");
 
-    const firstPerks = this.getPerkArray(allPerks[0]);
-    const secondPerks = this.getPerkArray(allPerks[1]);
-    const thirdPerks = this.getPerkArray(allPerks[2]);
-    const fourthPerks = this.getPerkArray(lineMatches[4]);
+    const firstPerks = this.getPerkArray(this.translateTerseToExpanded(allPerks[0]));
+    console.debug(firstPerks);
+    const secondPerks = this.getPerkArray(this.translateTerseToExpanded(allPerks[1]));
+    const thirdPerks = this.getPerkArray(this.translateTerseToExpanded(allPerks[2]));
+    const fourthPerks = this.getPerkArray(this.translateTerseToExpanded(lineMatches[4]));
 
     const masterworkColumn = lineMatches[5].replace(" MW", "");
 
