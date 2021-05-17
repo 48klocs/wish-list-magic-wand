@@ -304,6 +304,17 @@ const permuter = {
     "Wolf Sight W1": 1288081796,
     "Zen Moment": 2387244414,
   },
+  abbreviatedNameMap: {
+    "4TTC": "Fourth Time's the Charm",
+    "Ex Pay": "Explosive Payload",
+    Extended: "Extended Barrel",
+    Extended: "Extended Mag",
+    Fluted: "Fluted Barrel",
+    OFA: "One for All",
+    "Res Burs": "Reservoir Burst",
+    Subs: "Subsistence",
+    "Tac Mag": "Tactical Mag",
+  },
   regexListFilledOut: function () {
     return Boolean($("#combinatedList").val());
   },
