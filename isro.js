@@ -311,8 +311,12 @@ const permuter = {
     "Ex Pay": "Explosive Payload",
     Extended: "Extended Barrel",
     Fluted: "Fluted Barrel",
+    HC: "High-Caliber Rounds",
     OFA: "One for All",
+    Polygonal: "Polygonal Rifling",
     "Res Burs": "Reservoir Burst",
+    Rico: "Ricochet Rounds",
+    Small: "Smallbore",
     Subs: "Subsistence",
     "Tac Mag": "Tactical Mag",
   },
@@ -550,21 +554,34 @@ const permuter = {
       tags
     );
   },
-  translateTerseToExpanded: function(shortPerkNames) {
+  getExpandedPerkName: function (perkName) {
+    const nameTranslation = this.nameHashMap[perkName];
+
+    if (Boolean(nameTranslation)) {
+      return perkName;
+    }
+
+    return this.abbreviatedNameMap[perkName];
+  },
+  translateTerseToExpanded: function (shortPerkNames) {
     if (!shortPerkNames) {
       return;
     }
 
-    const shortPerkArray = shortPerkNames.split('/');
+    const shortPerkArray = shortPerkNames.split("/");
 
-    const missingTranslations = shortPerkArray.filter((spn) => !Boolean(this.abbreviatedNameMap[spn]));
+    const missingTranslations = shortPerkArray.filter(
+      (spn) => !Boolean(this.getExpandedPerkName(spn))
+    );
 
     if (missingTranslations.length) {
-      $("#dimWishListContent").val(`Missing terse translations: ${missingTranslations.join(',')}`);
-      throw `Missing terse translations: ${missingTranslations.join(',')}`;
+      $("#dimWishListContent").val(
+        `Missing terse translations: ${missingTranslations.join(",")}`
+      );
+      throw `Missing terse translations: ${missingTranslations.join(",")}`;
     }
 
-    return shortPerkArray.map((spn) => this.abbreviatedNameMap[spn]).join('/');
+    return shortPerkArray.map((spn) => this.getExpandedPerkName[spn]).join("/");
   },
   transformInputLine: function (inputLine) {
     if (!inputLine) {
@@ -587,11 +604,19 @@ const permuter = {
 
     const allPerks = lineMatches[2].split(", ");
 
-    const firstPerks = this.getPerkArray(this.translateTerseToExpanded(allPerks[0]));
+    const firstPerks = this.getPerkArray(
+      this.translateTerseToExpanded(allPerks[0])
+    );
     console.debug(firstPerks);
-    const secondPerks = this.getPerkArray(this.translateTerseToExpanded(allPerks[1]));
-    const thirdPerks = this.getPerkArray(this.translateTerseToExpanded(allPerks[2]));
-    const fourthPerks = this.getPerkArray(this.translateTerseToExpanded(lineMatches[4]));
+    const secondPerks = this.getPerkArray(
+      this.translateTerseToExpanded(allPerks[1])
+    );
+    const thirdPerks = this.getPerkArray(
+      this.translateTerseToExpanded(allPerks[2])
+    );
+    const fourthPerks = this.getPerkArray(
+      this.translateTerseToExpanded(lineMatches[4])
+    );
 
     const masterworkColumn = lineMatches[5].replace(" MW", "");
 
