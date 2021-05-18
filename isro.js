@@ -308,11 +308,20 @@ const permuter = {
   abbreviatedNameMap: {
     "4TTC": "Fourth Time's the Charm",
     Appended: "Appended Mag",
+    APR: "Armor-Piercing Rounds",
     Arrowhead: "Arrowhead Brake",
+    ARP: "Armor-Piercing Rounds",
+    Assault: "Assault Mag",
+    "Auto-Loading": "Auto-Loading Holster",
+    Corkscrew: "Corkscrew Rifling",
+    Demo: "Demolitionist",
+    Disruption: "Disruption Break",
     "Ex Pay": "Explosive Payload",
     Extended: "Extended Barrel",
+    FF: "Feeding Frenzy",
     Fluted: "Fluted Barrel",
     HC: "High-Caliber Rounds",
+    "High Cal": "High-Caliber Rounds",
     HIIR: "High-Impact Reserves",
     MKC: "Multikill Clip",
     OFA: "One for All",
@@ -321,8 +330,10 @@ const permuter = {
     Rico: "Ricochet Rounds",
     Small: "Smallbore",
     Subs: "Subsistence",
+    Swash: "Swashbuckler",
     "Tac Mag": "Tactical Mag",
     Trench: "Trench Barrel",
+    Vorpal: "Vorpal Weapon",
   },
   regexListFilledOut: function () {
     return Boolean($("#combinatedList").val());
@@ -586,7 +597,7 @@ const permuter = {
       throw `Missing terse translations: ${missingTranslations.join(",")}`;
     }
 
-    return shortPerkArray.map((spn) => this.getExpandedPerkName[spn]).join("/");
+    return shortPerkArray.map((spn) => this.getExpandedPerkName(spn)).join("/");
   },
   transformInputLine: function (inputLine) {
     if (!inputLine) {
@@ -612,18 +623,20 @@ const permuter = {
     const firstPerks = this.getPerkArray(
       this.translateTerseToExpanded(allPerks[0])
     );
-    console.debug(firstPerks);
+
     const secondPerks = this.getPerkArray(
       this.translateTerseToExpanded(allPerks[1])
     );
+
     const thirdPerks = this.getPerkArray(
       this.translateTerseToExpanded(allPerks[2])
     );
+
     const fourthPerks = this.getPerkArray(
       this.translateTerseToExpanded(lineMatches[4])
     );
 
-    const masterworkColumn = lineMatches[5].replace(" MW", "");
+    const masterworkColumn = lineMatches[5].replace(" MW", "").trim();
 
     const reviewer = $("#reviewer").val();
     const lineComment = `//notes:${listName}. Recommended MW - ${masterworkColumn}`;
