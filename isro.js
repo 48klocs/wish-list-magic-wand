@@ -29,7 +29,6 @@ const permuter = {
     915325363: 3128594062, // charge time + impact -> ct + i,
     3130025796: 3833978555, // arc damage resistance -> adr
     1576279482: 3870201881, // void damage resistance -> vdr
-    1467527085: 2420895100, // extended barrel -> extended mag
   },
   masterworkHashMap: {
     Accuracy: 2674077375,
@@ -55,11 +54,14 @@ const permuter = {
     1168162263: 3124871000, // outlaw
     806159697: 2360754333, // trench barrel (barrel -> trait)
     332773068: 1478423395, // volatile launch
+    1561789734: 3824105627, // firefly -> firefly
+    1467527085: 2420895100, // extended barrel -> extended mag
   },
   nameHashMap: {
     "50VAL Telescopic": 767484757,
     "Accelerated Coils": 689005463,
     "Accurized Rounds": 3142289711,
+    "Adrenaline Junkie": 11612903,
     "Agile Bowstring": 3768438372,
     "Alloy Casing": 2985827016,
     "Alloy Magazine": 1431678320,
@@ -131,6 +133,7 @@ const permuter = {
     "Feeding Frenzy": 2779035018,
     "Fiberglass Arrow Shaft": 3429800428,
     "Field Prep": 2869569095,
+    Firefly: 1561789734,
     "Firing Line": 1771339417,
     "Firmly Planted": 280464955,
     "Flared Magwell": 3230963543,
@@ -153,6 +156,7 @@ const permuter = {
     "Hand-Laid Stock": 990298390,
     "Hard Launch": 981914802,
     Headseeker: 460017080,
+    "Heating Up": 1570042021,
     "Heavy Grip": 1012699414,
     "Heavy Guard": 2349202967,
     "Helical Fletching": 3311977193,
@@ -215,6 +219,7 @@ const permuter = {
     Outlaw: 1168162263,
     Overflow: 3643424744,
     "Particle Repeater": 3868766766,
+    "Phase Magazine": 830282363,
     "Polygonal Rifling": 1392496348,
     "Polymer Grip": 862848869,
     "Polymer String": 852209214,
@@ -239,6 +244,7 @@ const permuter = {
     "Relentless Strikes": 1749209109,
     "Reservoir Burst": 1427256713,
     "Reversal of Fortune": 136456835,
+    "Rewind Rounds": 3418782618,
     "Ricochet Rounds": 1885400500,
     "Rifle Scope SSF": 679077872,
     "Rifle Scope ST": 679077873,
@@ -309,14 +315,20 @@ const permuter = {
   },
   abbreviatedNameMap: {
     "12Punch": "One-Two Punch",
+    "1-2": "One-Two Punch",
+    "1-2 Punch": "One-Two Punch",
     "3Tap": "Triple Tap",
     "4TTC": "Fourth Time's the Charm",
+    AA: "Ambitious Assassin",
+    Accurized: "Accurized Rounds",
     Ambitious: "Ambitious Assassin",
+    "App Mag": "Appended Mag",
     Appended: "Appended Mag",
     APR: "Armor-Piercing Rounds",
     Arrowhead: "Arrowhead Brake",
     ARP: "Armor-Piercing Rounds",
     Assault: "Assault Mag",
+    "Auto-Load": "Auto-Loading Holster",
     AutoLoading: "Auto-Loading Holster",
     "Auto-Loading": "Auto-Loading Holster",
     Blinding: "Blinding Grenades",
@@ -325,6 +337,7 @@ const permuter = {
     Cork: "Corkscrew Rifling",
     Corkscrew: "Corkscrew Rifling",
     Demo: "Demolitionist",
+    "D-Fly": "Dragonfly",
     DFly: "Dragonfly",
     Disruption: "Disruption Break",
     ExPay: "Explosive Payload",
@@ -334,6 +347,8 @@ const permuter = {
     FF: "Feeding Frenzy",
     Fluted: "Fluted Barrel",
     FTTC: "Fourth Time's the Charm",
+    Hammer: "Hammer-Forged Rifling",
+    Hard: "Hard Launch",
     "Hammer-Forged": "Hammer-Forged Rifling",
     HC: "High-Caliber Rounds",
     "High Cal": "High-Caliber Rounds",
@@ -348,11 +363,14 @@ const permuter = {
     "Linear Comp": "Linear Compensator",
     MKC: "Multikill Clip",
     OFA: "One for All",
+    Phase: "Phase Magazine",
     Poly: "Polygonal Rifling",
     Polygonal: "Polygonal Rifling",
+    Quick: "Quick Launch",
     Quickdot: "QuickDot SAS",
     Rapid: "Rapid Hit",
     Raptor: "ATD Raptor",
+    "Re-Rounds": "Rewind Rounds",
     "Res Burs": "Reservoir Burst",
     Relentless: "Relentless Strikes",
     Rico: "Ricochet Rounds",
@@ -364,9 +382,13 @@ const permuter = {
     Swash: "Swashbuckler",
     Tac: "Tactical Mag",
     "Tac Mag": "Tactical Mag",
+    Tactic: "Tactic SAS",
+    "Threat Det": "Threat Detector",
     Trench: "Trench Barrel",
+    Triple: "Triple Tap",
     Truesight: "TrueSight HCS",
     Vorpal: "Vorpal Weapon",
+    Well: "Wellspring",
   },
   regexListFilledOut: function () {
     return Boolean($("#combinatedList").val());
