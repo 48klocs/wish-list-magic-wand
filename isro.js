@@ -307,11 +307,14 @@ const permuter = {
   },
   abbreviatedNameMap: {
     "4TTC": "Fourth Time's the Charm",
+    Appended: "Appended Mag",
     Arrowhead: "Arrowhead Brake",
     "Ex Pay": "Explosive Payload",
     Extended: "Extended Barrel",
     Fluted: "Fluted Barrel",
     HC: "High-Caliber Rounds",
+    HIIR: "High-Impact Reserves",
+    MKC: "Multikill Clip",
     OFA: "One for All",
     Polygonal: "Polygonal Rifling",
     "Res Burs": "Reservoir Burst",
@@ -319,6 +322,7 @@ const permuter = {
     Small: "Smallbore",
     Subs: "Subsistence",
     "Tac Mag": "Tactical Mag",
+    Trench: "Trench Barrel",
   },
   regexListFilledOut: function () {
     return Boolean($("#combinatedList").val());
@@ -555,13 +559,14 @@ const permuter = {
     );
   },
   getExpandedPerkName: function (perkName) {
-    const nameTranslation = this.nameHashMap[perkName];
+    const trimmedPerkName = perkName.trim();
+    const nameTranslation = this.nameHashMap[trimmedPerkName];
 
     if (Boolean(nameTranslation)) {
-      return perkName;
+      return trimmedPerkName;
     }
 
-    return this.abbreviatedNameMap[perkName];
+    return this.abbreviatedNameMap[trimmedPerkName];
   },
   translateTerseToExpanded: function (shortPerkNames) {
     if (!shortPerkNames) {
