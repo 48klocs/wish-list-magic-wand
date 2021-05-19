@@ -54,11 +54,14 @@ const permuter = {
     1168162263: 3124871000, // outlaw
     806159697: 2360754333, // trench barrel (barrel -> trait)
     332773068: 1478423395, // volatile launch
+    1561789734: 3824105627, // firefly -> firefly
+    1467527085: 2420895100, // extended barrel -> extended mag
   },
   nameHashMap: {
     "50VAL Telescopic": 767484757,
     "Accelerated Coils": 689005463,
     "Accurized Rounds": 3142289711,
+    "Adrenaline Junkie": 11612903,
     "Agile Bowstring": 3768438372,
     "Alloy Casing": 2985827016,
     "Alloy Magazine": 1431678320,
@@ -130,6 +133,7 @@ const permuter = {
     "Feeding Frenzy": 2779035018,
     "Fiberglass Arrow Shaft": 3429800428,
     "Field Prep": 2869569095,
+    Firefly: 1561789734,
     "Firing Line": 1771339417,
     "Firmly Planted": 280464955,
     "Flared Magwell": 3230963543,
@@ -152,6 +156,7 @@ const permuter = {
     "Hand-Laid Stock": 990298390,
     "Hard Launch": 981914802,
     Headseeker: 460017080,
+    "Heating Up": 1570042021,
     "Heavy Grip": 1012699414,
     "Heavy Guard": 2349202967,
     "Helical Fletching": 3311977193,
@@ -185,6 +190,7 @@ const permuter = {
     "King Dot K2": 1452368633,
     "King Sight K1": 1288081797,
     "Lasting Impression": 3927722942,
+    "Lead From Gold": 1556840489,
     "Lead from Gold": 1556840489,
     "Light Mag": 679225683,
     "Linear Compensator": 1441682018,
@@ -204,6 +210,7 @@ const permuter = {
     "Natural Fletching": 1500996326,
     "Natural String": 1784898267,
     "No Distractions": 2866798147,
+    "One For All": 4049631843,
     "One for All": 4049631843,
     "One-Two Punch": 2679249093,
     Onslaught: 95528736,
@@ -212,6 +219,7 @@ const permuter = {
     Outlaw: 1168162263,
     Overflow: 3643424744,
     "Particle Repeater": 3868766766,
+    "Phase Magazine": 830282363,
     "Polygonal Rifling": 1392496348,
     "Polymer Grip": 862848869,
     "Polymer String": 852209214,
@@ -236,6 +244,7 @@ const permuter = {
     "Relentless Strikes": 1749209109,
     "Reservoir Burst": 1427256713,
     "Reversal of Fortune": 136456835,
+    "Rewind Rounds": 3418782618,
     "Ricochet Rounds": 1885400500,
     "Rifle Scope SSF": 679077872,
     "Rifle Scope ST": 679077873,
@@ -303,6 +312,83 @@ const permuter = {
     "Wolf Dot W2": 1452368632,
     "Wolf Sight W1": 1288081796,
     "Zen Moment": 2387244414,
+  },
+  abbreviatedNameMap: {
+    "12Punch": "One-Two Punch",
+    "1-2": "One-Two Punch",
+    "1-2 Punch": "One-Two Punch",
+    "3Tap": "Triple Tap",
+    "4TTC": "Fourth Time's the Charm",
+    AA: "Ambitious Assassin",
+    Accurized: "Accurized Rounds",
+    Ambitious: "Ambitious Assassin",
+    "App Mag": "Appended Mag",
+    Appended: "Appended Mag",
+    APR: "Armor-Piercing Rounds",
+    Arrowhead: "Arrowhead Brake",
+    ARP: "Armor-Piercing Rounds",
+    Assault: "Assault Mag",
+    "Auto-Load": "Auto-Loading Holster",
+    AutoLoading: "Auto-Loading Holster",
+    "Auto-Loading": "Auto-Loading Holster",
+    Blinding: "Blinding Grenades",
+    Clown: "Clown Cartridge",
+    Control: "Control SAS",
+    Cork: "Corkscrew Rifling",
+    Corkscrew: "Corkscrew Rifling",
+    Demo: "Demolitionist",
+    "D-Fly": "Dragonfly",
+    DFly: "Dragonfly",
+    Disruption: "Disruption Break",
+    ExPay: "Explosive Payload",
+    "Ex Pay": "Explosive Payload",
+    Extended: "Extended Barrel",
+    Fastdraw: "Fastdraw HCS",
+    FF: "Feeding Frenzy",
+    Fluted: "Fluted Barrel",
+    FTTC: "Fourth Time's the Charm",
+    Hammer: "Hammer-Forged Rifling",
+    Hard: "Hard Launch",
+    "Hammer-Forged": "Hammer-Forged Rifling",
+    HC: "High-Caliber Rounds",
+    "High Cal": "High-Caliber Rounds",
+    "High-Cal": "High-Caliber Rounds",
+    "High Impact": "High-Impact Reserves",
+    "High Velocity": "High Velocity Rounds",
+    HIIR: "High-Impact Reserves",
+    Jagged: "Jagged Edge",
+    KC: "Kill Clip",
+    Liquid: "Liquid Coils",
+    Linear: "Linear Compensator",
+    "Linear Comp": "Linear Compensator",
+    MKC: "Multikill Clip",
+    OFA: "One for All",
+    Phase: "Phase Magazine",
+    Poly: "Polygonal Rifling",
+    Polygonal: "Polygonal Rifling",
+    Quick: "Quick Launch",
+    Quickdot: "QuickDot SAS",
+    Rapid: "Rapid Hit",
+    Raptor: "ATD Raptor",
+    "Re-Rounds": "Rewind Rounds",
+    "Res Burs": "Reservoir Burst",
+    Relentless: "Relentless Strikes",
+    Rico: "Ricochet Rounds",
+    Ricochet: "Ricochet Rounds",
+    Small: "Smallbore",
+    Spike: "Spike Grenades",
+    Sub: "Subsistence",
+    Subs: "Subsistence",
+    Swash: "Swashbuckler",
+    Tac: "Tactical Mag",
+    "Tac Mag": "Tactical Mag",
+    Tactic: "Tactic SAS",
+    "Threat Det": "Threat Detector",
+    Trench: "Trench Barrel",
+    Triple: "Triple Tap",
+    Truesight: "TrueSight HCS",
+    Vorpal: "Vorpal Weapon",
+    Well: "Wellspring",
   },
   regexListFilledOut: function () {
     return Boolean($("#combinatedList").val());
@@ -538,6 +624,36 @@ const permuter = {
       tags
     );
   },
+  getExpandedPerkName: function (perkName) {
+    const trimmedPerkName = perkName.trim();
+    const nameTranslation = this.nameHashMap[trimmedPerkName];
+
+    if (Boolean(nameTranslation)) {
+      return trimmedPerkName;
+    }
+
+    return this.abbreviatedNameMap[trimmedPerkName];
+  },
+  translateTerseToExpanded: function (shortPerkNames) {
+    if (!shortPerkNames) {
+      return;
+    }
+
+    const shortPerkArray = shortPerkNames.split("/");
+
+    const missingTranslations = shortPerkArray.filter(
+      (spn) => !Boolean(this.getExpandedPerkName(spn))
+    );
+
+    if (missingTranslations.length) {
+      $("#dimWishListContent").val(
+        `Missing terse translations: ${missingTranslations.join(",")}`
+      );
+      throw `Missing terse translations: ${missingTranslations.join(",")}`;
+    }
+
+    return shortPerkArray.map((spn) => this.getExpandedPerkName(spn)).join("/");
+  },
   transformInputLine: function (inputLine) {
     if (!inputLine) {
       return;
@@ -559,12 +675,23 @@ const permuter = {
 
     const allPerks = lineMatches[2].split(", ");
 
-    const firstPerks = this.getPerkArray(allPerks[0]);
-    const secondPerks = this.getPerkArray(allPerks[1]);
-    const thirdPerks = this.getPerkArray(allPerks[2]);
-    const fourthPerks = this.getPerkArray(lineMatches[4]);
+    const firstPerks = this.getPerkArray(
+      this.translateTerseToExpanded(allPerks[0])
+    );
 
-    const masterworkColumn = lineMatches[5].replace(" MW", "");
+    const secondPerks = this.getPerkArray(
+      this.translateTerseToExpanded(allPerks[1])
+    );
+
+    const thirdPerks = this.getPerkArray(
+      this.translateTerseToExpanded(allPerks[2])
+    );
+
+    const fourthPerks = this.getPerkArray(
+      this.translateTerseToExpanded(lineMatches[4])
+    );
+
+    const masterworkColumn = lineMatches[5].replace(" MW", "").trim();
 
     const reviewer = $("#reviewer").val();
     const lineComment = `//notes:${listName}. Recommended MW - ${masterworkColumn}`;
