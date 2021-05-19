@@ -333,6 +333,7 @@ const permuter = {
     "Auto-Loading": "Auto-Loading Holster",
     Blinding: "Blinding Grenades",
     Clown: "Clown Cartridge",
+    Cluster: "Cluster Bomb",
     Control: "Control SAS",
     Cork: "Corkscrew Rifling",
     Corkscrew: "Corkscrew Rifling",
@@ -356,8 +357,11 @@ const permuter = {
     "High Impact": "High-Impact Reserves",
     "High Velocity": "High Velocity Rounds",
     HIIR: "High-Impact Reserves",
+    Impact: "Impact Casing",
+    Impulse: "Impulse Amplifier",
     Jagged: "Jagged Edge",
     KC: "Kill Clip",
+    Lasting: "Lasting Impression",
     Liquid: "Liquid Coils",
     Linear: "Linear Compensator",
     "Linear Comp": "Linear Compensator",
@@ -384,11 +388,13 @@ const permuter = {
     "Tac Mag": "Tactical Mag",
     Tactic: "Tactic SAS",
     "Threat Det": "Threat Detector",
+    Tracking: "Tracking Module",
     Trench: "Trench Barrel",
     Triple: "Triple Tap",
     Truesight: "TrueSight HCS",
     Vorpal: "Vorpal Weapon",
     Well: "Wellspring",
+    Whirlwind: "Whirlwind Blade",
   },
   regexListFilledOut: function () {
     return Boolean($("#combinatedList").val());
@@ -659,11 +665,15 @@ const permuter = {
       return;
     }
 
-    const lineMatches = inputLine.match(/(.*): ((.*), )(.*)w\/(.*)/);
+    let lineMatches = inputLine.match(/(.*): ((.*), )(.*)w\/(.*)/);
 
     if (lineMatches == null) {
-      listName = inputLine;
-      return;
+      lineMatches = inputLine.match(/(.*): ((.*), )(.*)/);
+
+      if (lineMatches == null) {
+        listName = inputLine;
+        return;
+      }
     }
 
     const itemId = Number(lineMatches[1]);
@@ -691,10 +701,14 @@ const permuter = {
       this.translateTerseToExpanded(lineMatches[4])
     );
 
-    const masterworkColumn = lineMatches[5].replace(" MW", "").trim();
+    let masterworkColumn = Boolean(lineMatches[5]) ?
+       lineMatches[5].replace(" MW", "").trim() :
+       null;
 
     const reviewer = $("#reviewer").val();
-    const lineComment = `//notes:${listName}. Recommended MW - ${masterworkColumn}`;
+    const lineComment = Boolean(masterworkColumn) ?
+     `//notes:${listName}. Recommended MW - ${masterworkColumn}` :
+     `//notes:${listName}.`;
 
     calculateAndOutputPermutations(
       [""],
