@@ -302,6 +302,7 @@ const permuter = {
     "Triple Tap": 3400784728,
     "Truesight HCS": 1926090092,
     "TrueSight HCS": 1926090092,
+    "Tunnel Vision": 2946784966,
     "Under Pressure": 1645158859,
     Underdog: 205890336,
     Unrelenting: 3108830275,
