@@ -707,8 +707,8 @@ const permuter = {
 
     const reviewer = $("#reviewer").val();
     const lineComment = Boolean(masterworkColumn) ?
-     `//notes:${listName}. Recommended MW - ${masterworkColumn}` :
-     `//notes:${listName}.`;
+     `#notes:${listName}. Recommended MW - ${masterworkColumn}` :
+     `#notes:${listName}.`;
 
     calculateAndOutputPermutations(
       [""],
