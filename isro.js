@@ -102,6 +102,7 @@ const permuter = {
     "Confined Launch": 1844523823,
     "Control SAS": 445755706,
     "Corkscrew Rifling": 4090651448,
+    Cornered: 1799762209,
     Counterattack: 3016987351,
     Countermass: 3809316345,
     "Crossfire HCS": 1926090090,
