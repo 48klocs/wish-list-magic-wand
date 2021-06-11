@@ -106,6 +106,7 @@ const permuter = {
     Counterattack: 3016987351,
     Countermass: 3809316345,
     "Crossfire HCS": 1926090090,
+    "Danger Zone": 960810156,
     Demolitionist: 3523296417,
     Desperado: 3047969693,
     "Disruption Break": 1683379515,
