@@ -161,6 +161,7 @@ const permuter = {
     "Hard Launch": 981914802,
     Harmony: 438098033,
     Headseeker: 460017080,
+    Headstone: 124408337,
     "Heating Up": 1570042021,
     "Heavy Grip": 1012699414,
     "Heavy Guard": 2349202967,
