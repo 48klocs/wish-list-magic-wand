@@ -258,6 +258,7 @@ const permuter = {
     "Seraph Rounds": 1140096971,
     "Shattering Blade": 818211479,
     "Shield Disorient": 3275789089,
+    "Shoot to Loot": 3700496672,
     "Short-Action Stock": 1067908860,
     "Shortspec SAS": 445755705,
     "Signal MS5": 194952923,
