@@ -124,6 +124,7 @@ const permuter = {
     "Enduring Blade": 1261178282,
     "Enduring Guard": 599007201,
     "Energy Transfer": 2030760728,
+    Ensemble: 2621346526,
     "Extended Barrel": 1467527085,
     "Extended Mag": 2420895100,
     "Explosive Head": 3365897133,
