@@ -158,6 +158,7 @@ const permuter = {
     "Hammer-Forged Rifling": 3250034553,
     "Hand-Laid Stock": 990298390,
     "Hard Launch": 981914802,
+    Harmony: 438098033,
     Headseeker: 460017080,
     "Heating Up": 1570042021,
     "Heavy Grip": 1012699414,
