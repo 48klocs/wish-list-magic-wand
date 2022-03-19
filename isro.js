@@ -56,15 +56,10 @@ const permuter = {
     332773068: 1478423395, // volatile launch
     1561789734: 3824105627, // firefly -> firefly
     1467527085: 2420895100, // extended barrel -> extended mag
-    79448657: 82180537, // psychohack 1 - 10
-    79448657: 357495645,
-    79448657: 567997816,
-    79448657: 883366072,
-    79448657: 1471995745,
-    79448657: 1598147670,
-    79448657: 2171055345,
-    79448657: 3717985200,
-    79448657: 3754350707,
+    79448657: [
+      82180537, 357495645, 567997816, 883366072, 1471995745, 1598147670,
+      2171055345, 3717985200, 3754350707,
+    ], // the psychohack collective
   },
   nameHashMap: {
     "50VAL Telescopic": 767484757,
@@ -496,8 +491,9 @@ const permuter = {
   addSecondaryHashValue: function (perkArray) {
     const alsoKnownAsValues = perkArray
       .map((v) => this.secondaryHashMap[v])
-      .filter((v) => !isNaN(v))
-      .map((v) => v.toString());
+      .filter((v) => !isNaN(v) || v.length)
+      .map((v) => v.toString().split(",").flat())
+      .flat();
 
     perkArray.push(...alsoKnownAsValues);
   },
