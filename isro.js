@@ -137,6 +137,7 @@ const permuter = {
     "Elastic String": 2801223209,
     "Elemental Capacitor": 3511092054,
     "En Garde": 1685431615,
+    Encore: 1195158366,
     "Enhanced Battery": 2680121939,
     "Enduring Blade": 1261178282,
     "Enduring Guard": 599007201,
