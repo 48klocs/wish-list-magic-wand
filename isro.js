@@ -70,6 +70,7 @@ const permuter = {
     "Adaptive Ordnance": 1281243303,
     "Adrenaline Junkie": 11612903,
     "Agile Bowstring": 3768438372,
+    "Air Assault": 3722653512,
     Alacrity: 2988596335,
     "Alloy Casing": 2985827016,
     "Alloy Magazine": 1431678320,
