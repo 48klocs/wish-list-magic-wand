@@ -384,6 +384,7 @@ const permuter = {
     "Vanguard's Vindication": 744217850,
     "Veist Stinger": 3988215619,
     "Volatile Launch": 332773068,
+    Voltshot: 2173046394,
     "Vorpal Weapon": 1546637391,
     Wellspring: 3592538738,
     "Well-Rounded": 744594675,
