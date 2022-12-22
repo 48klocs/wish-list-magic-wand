@@ -547,7 +547,7 @@ const permuter = {
 
     if (perkString.match(/[a-z]/i)) {
       const perkArray = this.splitOnDelimiters(perkString)
-        .map((v) => v.trim())
+        .map((v) => v.trim().replace("`", "'").replace("’", "'"))
         .filter((v) => v.length > 1)
         .map((v) => this.optionallyTranslateNameToHash(v));
 
