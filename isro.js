@@ -182,6 +182,7 @@ const permuter = {
     Genesis: 3096702027,
     "Golden Tricorn": 2610012052,
     "Grave Robber": 1631667848,
+    "Gutshot Straight": 1365187766,
     "Hakke Breach Armaments": 1607056502,
     "Hakke Heavy Burst Fire": 2206869417,
     "Hakke Light Burst Fire": 4152458172,
