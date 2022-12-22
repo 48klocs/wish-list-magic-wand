@@ -274,6 +274,7 @@ const permuter = {
     "Polymer String": 852209214,
     "Projection Fuse": 2969185026,
     "Proximity Grenades": 409831596,
+    Pugilist: 691659142,
     "Pulse Monitor": 972757866,
     Pyrogenesis: 1059301209,
     Psychohack: 79448657,
