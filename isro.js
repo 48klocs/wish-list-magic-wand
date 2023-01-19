@@ -359,7 +359,7 @@ const permuter = {
     "Tactical Mag": 106909392,
     "Tactile String": 1196733167,
     "Tap the Trigger": 1890422124,
-    "Target Lock": 2939589096,
+    "Target Lock": 365154968,
     "Target SAS": 445755711,
     "Tempered Edge": 938542991,
     "Tempered Truss Rod": 5699512,
