@@ -150,7 +150,7 @@ const permuter = {
     "Energy Transfer": 2030760728,
     "Enhanced Battery": 2680121939,
     Ensemble: 2621346526,
-    "Envious Assassin": 424370782,
+    "Envious Assassin": 968510818,
     "Explosive Head": 3365897133,
     "Explosive Light": 3194351027,
     "Explosive Payload": 3038247973,
