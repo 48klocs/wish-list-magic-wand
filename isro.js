@@ -392,7 +392,7 @@ const permuter = {
     Underdog: 205890336,
     Unrelenting: 3108830275,
     "Unstoppable Force": 2224838837,
-    "Valiant Charge": 4274613598,
+    "Valiant Charge": 4274614370,
     "Vanguard's Vindication": 744217850,
     "Veist Stinger": 3988215619,
     "Volatile Launch": 332773068,
