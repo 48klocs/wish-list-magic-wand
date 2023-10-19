@@ -255,6 +255,7 @@ const permuter = {
     "Lightweight Emitter": 594346985,
     "Linear Compensator": 1441682018,
     "Liquid Coils": 1687452232,
+    "Loose Change": 1119449540,
     "Low-Impedance Windings": 2713678205,
     "Master of Arms": 3081867624,
     "Mechanized Autoloader": 1178686995,
