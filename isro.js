@@ -155,6 +155,7 @@ const permuter = {
     "Enduring Guard": 599007201,
     "Energy Transfer": 2030760728,
     "Enhanced Battery": 2680121939,
+    "Enlightened Action": 3828510309,
     Ensemble: 2621346526,
     "Envious Assassin": 968510818,
     "Explosive Head": 3365897133,
