@@ -291,6 +291,7 @@ const permuter = {
     "Polygonal Rifling": 1392496348,
     "Polymer Grip": 862848869,
     "Polymer String": 852209214,
+    "Precision Instrument": 555281244,
     "Projection Fuse": 2969185026,
     "Proximity Grenades": 409831596,
     Psychohack: 79448657,
