@@ -239,7 +239,7 @@ const permuter = {
     "Keep Away": 3619207468,
     Kickstart: 1754714824,
     "Kill Clip": 1015611457,
-    "Killing Tally": 2782457288,
+    "Killing Tally": 557221067,
     "Killing Wind": 2450788523,
     "Kinetic Tremors": 3891536761,
     "King Dot K2": 1452368633,
