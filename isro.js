@@ -719,6 +719,8 @@ const permuter = {
 
     const slotFourValues = this.getPerkArray($("#slotFourPerks").val());
 
+    const slotFiveValues = this.getPerkArray($("#slotFivePerks").val());
+
     const masterworkPerkValues = this.getMasterworkPerkArray(
       $("#masterworkPerks").val()
     );
@@ -740,6 +742,7 @@ const permuter = {
 
     calculateAndOutputPermutations(
       masterworkPerkValues,
+      slotFiveValues,
       slotFourValues,
       slotThreeValues,
       slotTwoValues,
@@ -834,6 +837,7 @@ const permuter = {
 
     calculateAndOutputPermutations(
       [""],
+      [""],
       fourthPerks,
       thirdPerks,
       secondPerks,
@@ -864,6 +868,7 @@ const permuter = {
 };
 function calculateAndOutputPermutations(
   masterworkPerkValues,
+  slotFiveValues,
   slotFourValues,
   slotThreeValues,
   slotTwoValues,
@@ -876,21 +881,25 @@ function calculateAndOutputPermutations(
   tags
 ) {
   masterworkPerkValues.forEach((sv) => {
-    slotFourValues.forEach((so) => {
-      slotThreeValues.forEach((sh) => {
-        slotTwoValues.forEach((sw) => {
-          slotOneValues.forEach((sn) => {
-            const perkString = [sn, sw, sh, so, sv].filter((v) => v).join(",");
+    slotFiveValues.forEach((sf) => {
+      slotFourValues.forEach((so) => {
+        slotThreeValues.forEach((sh) => {
+          slotTwoValues.forEach((sw) => {
+            slotOneValues.forEach((sn) => {
+              const perkString = [sn, sw, sh, so, sf, sv]
+                .filter((v) => v)
+                .join(",");
 
-            if (!blockNotes) {
-              generatedPermutations.push(
-                `dimwishlist:item=${itemId}&perks=${perkString}${commentedTags}`
-              );
-            } else {
-              generatedPermutations.push(
-                `dimwishlist:item=${itemId}&perks=${perkString}`
-              );
-            }
+              if (!blockNotes) {
+                generatedPermutations.push(
+                  `dimwishlist:item=${itemId}&perks=${perkString}${commentedTags}`
+                );
+              } else {
+                generatedPermutations.push(
+                  `dimwishlist:item=${itemId}&perks=${perkString}`
+                );
+              }
+            });
           });
         });
       });
