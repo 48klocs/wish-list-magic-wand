@@ -131,6 +131,7 @@ const permuter = {
     "Crossfire HCS": 1926090090,
     "Danger Zone": 960810156,
     "Dawning Surprise": 4264904777,
+    Deconstruct: 3993379141,
     Demolitionist: 3523296417,
     Desperado: 3047969693,
     "Destabilizing Rounds": 2048641572,
