@@ -275,7 +275,7 @@ const permuter = {
     "Natural String": 1784898267,
     "No Distractions": 2866798147,
     "Noble Deeds": 1823011807,
-    "Offhand Strike": 416023159,
+    "Offhand Strike": 2416023159,
     "Omolon Fluid Dynamics": 2839173408,
     "One For All": 4049631843,
     "One Quiet Moment": 4091460919,
