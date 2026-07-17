@@ -28,6 +28,35 @@ input[type="text"]
     width: 400px;
     background: #cccccc;
 }
+input[type="text"].custom-tags {
+    width: 150px;
+}
+button {
+    font-size: 14px;
+}
+.tag-controls {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.tag-group {
+    border-right: 1px solid #cccccc;
+    display: inline-flex;
+    gap: 4px;
+    padding-right: 8px;
+}
+.tag-toggle,
+#addCustomTags {
+    background: #cccccc;
+    border: 1px solid #222222;
+    cursor: pointer;
+    padding: 3px 6px;
+}
+.tag-toggle.selected {
+    background: lightgreen;
+    border-color: white;
+}
 textarea
 {
     background: #cccccc;

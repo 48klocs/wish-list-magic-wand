@@ -543,6 +543,34 @@ const permuter = {
         this.generatePermutations();
       }
     });
+
+    $(".tag-toggle").click((event) => {
+      const tagButton = $(event.currentTarget);
+      const isSelected = !tagButton.hasClass("selected");
+
+      tagButton.toggleClass("selected", isSelected);
+      tagButton.attr("aria-pressed", isSelected.toString());
+      this.updateTagsInput();
+    });
+
+    $("#addCustomTags").click(() => {
+      $("#addCustomTags").hide();
+      $("#customTags").prop("hidden", false).focus();
+    });
+
+    $("#customTags").on("input", () => {
+      this.updateTagsInput();
+    });
+
+    $("#customTags").blur(() => {
+      const customTagsInput = $("#customTags");
+
+      if (!customTagsInput.val().trim()) {
+        customTagsInput.val("").prop("hidden", true);
+        $("#addCustomTags").show();
+        this.updateTagsInput();
+      }
+    });
   },
   init: function () {
     this.initEvents();
@@ -682,7 +710,27 @@ const permuter = {
   splitOnDelimiters: function (inputString) {
     return inputString.split(/\,|\//);
   },
+  getCustomTags: function () {
+    const customTagsString = $("#customTags").val();
+
+    if (!customTagsString) {
+      return [];
+    }
+
+    return this.splitOnDelimiters(customTagsString)
+      .map((v) => v.trim())
+      .filter((v) => v.length > 1);
+  },
+  updateTagsInput: function () {
+    const selectedBuiltInTags = $(".tag-toggle.selected")
+      .map((index, tagButton) => $(tagButton).data("tag"))
+      .get();
+
+    $("#tags").val(selectedBuiltInTags.concat(this.getCustomTags()).join(","));
+  },
   getTags: function () {
+    this.updateTagsInput();
+
     const tagsString = $("#tags").val();
 
     if (!tagsString) {

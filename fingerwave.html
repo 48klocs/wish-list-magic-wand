@@ -116,14 +116,6 @@
         <tr>
           <td>
             <label for="masterworkPerks">
-              Tags (comma separated, optional)
-            </label>
-          </td>
-          <td><input id="tags" type="text" /></td>
-        </tr>
-        <tr>
-          <td>
-            <label for="masterworkPerks">
               Reviewer (optional)
             </label>
           </td>
@@ -136,6 +128,32 @@
             </label>
           </td>
           <td><textarea cols="80" rows="4" id="itemNotes"></textarea></td>
+        </tr>
+        <tr>
+          <td>
+            <label for="tags">
+              Tags (optional)
+            </label>
+          </td>
+          <td>
+            <div id="tagControls" class="tag-controls">
+              <span class="tag-group">
+                <button type="button" class="tag-toggle" data-tag="pvp" aria-pressed="false">PvP</button>
+                <button type="button" class="tag-toggle" data-tag="pve" aria-pressed="false">PvE</button>
+                <button type="button" class="tag-toggle" data-tag="gambit" aria-pressed="false">Gambit</button>
+              </span>
+              <span class="tag-group">
+                <button type="button" class="tag-toggle" data-tag="dps" aria-pressed="false">DPS</button>
+              </span>
+              <span class="tag-group">
+                <button type="button" class="tag-toggle" data-tag="controller" aria-pressed="false">Controller</button>
+                <button type="button" class="tag-toggle" data-tag="mkb" aria-pressed="false">M+KB</button>
+              </span>
+              <button type="button" id="addCustomTags">Add Custom</button>
+              <input id="customTags" class="custom-tags" type="text" aria-label="Custom tags" hidden />
+              <input id="tags" type="hidden" />
+            </div>
+          </td>
         </tr>
         <tr>
           <td width="25%">
